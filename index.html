@@ -360,7 +360,7 @@
           <button class="secondary" id="nextBtn">随机生成下一套</button>
           <button class="ghost" id="resetBtn">清空本套作答</button>
         </div>
-        <div class="tips">
+        <div class="tips" id="tipsBox">
           单选和多选会自动判分。<br>
           填空题支持常见别名匹配。<br>
           简答题会给出参考答案，方便你对照背诵。
@@ -375,6 +375,7 @@
     </div>
   </main>
 
+  <script src="coverage-data.js"></script>
   <script>
     const questionBank = {
       single: [
@@ -542,7 +543,17 @@
       ]
     };
 
-    const paperConfig = { single: 12, multiple: 8, blank: 10, short: 3 };
+    const exactCoveragePoints = window.exactCoveragePoints || [];
+    questionBank.short.push(
+      ...exactCoveragePoints.map(item => ({
+        id: `cover-${item.id}`,
+        prompt: `【逐条覆盖】${item.source}｜${item.title}`,
+        keywords: [],
+        sample: item.answer
+      }))
+    );
+
+    const paperConfig = { single: 12, multiple: 8, blank: 10, short: 6 };
     const typeNames = { single: "单选题", multiple: "多选题", blank: "填空题", short: "简答题" };
 
     const state = {
@@ -556,6 +567,14 @@
     const paperNoEl = document.getElementById("paperNo");
     const questionCountEl = document.getElementById("questionCount");
     const scoreTextEl = document.getElementById("scoreText");
+    const tipsBoxEl = document.getElementById("tipsBox");
+
+    tipsBoxEl.innerHTML = `
+      单选和多选会自动判分。<br>
+      填空题支持常见别名匹配。<br>
+      简答题会给出参考答案，方便你对照背诵。<br>
+      当前已逐条覆盖 <strong>${exactCoveragePoints.length}</strong> 条知识点。
+    `;
 
     function shuffle(list) {
       const arr = [...list];
@@ -721,15 +740,24 @@
         if (question.type === "short") {
           shortCount += 1;
           const text = card.querySelector(".short-answer").value;
-          const review = checkShortAnswer(text, question.keywords);
-          const pass = review.matched.length >= Math.max(2, Math.ceil(question.keywords.length / 2));
-          showResult(
-            card,
-            `<div class="result-title">${pass ? "要点覆盖较好" : "建议补充要点"}</div>
-             <div>命中关键词：${review.matched.length}/${review.total}</div>
-             <div>参考答案：${question.sample}</div>`,
-            pass
-          );
+          if (!question.keywords || !question.keywords.length) {
+            showResult(
+              card,
+              `<div class="result-title">逐条知识点对照</div>
+               <div>参考答案：${question.sample}</div>`,
+              true
+            );
+          } else {
+            const review = checkShortAnswer(text, question.keywords);
+            const pass = review.matched.length >= Math.max(2, Math.ceil(question.keywords.length / 2));
+            showResult(
+              card,
+              `<div class="result-title">${pass ? "要点覆盖较好" : "建议补充要点"}</div>
+               <div>命中关键词：${review.matched.length}/${review.total}</div>
+               <div>参考答案：${question.sample}</div>`,
+              pass
+            );
+          }
         }
       });
 
