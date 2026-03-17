@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>党建知识随机练习</title>
+  <style>
+    :root {
+      --bg: linear-gradient(135deg, #fff7ef 0%, #fff1e1 45%, #ffe2c4 100%);
+      --card: rgba(255, 252, 247, 0.96);
+      --text: #2c1c12;
+      --muted: #7a5a49;
+      --accent: #b53322;
+      --accent-strong: #8f1c10;
+      --accent-soft: #f8d8c8;
+      --border: #e7c6b4;
+      --ok: #1f7a42;
+      --bad: #ba3127;
+      --shadow: 0 18px 45px rgba(116, 50, 24, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 32px auto 48px;
+    }
+
+    .hero,
+    .panel,
+    .question-card {
+      background: var(--card);
+      border: 1px solid rgba(183, 92, 53, 0.14);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(181, 51, 34, 0.18) 0%, rgba(181, 51, 34, 0) 70%);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .panel {
+      padding: 22px;
+      align-self: start;
+      position: sticky;
+      top: 20px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+
+    .stat {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff8f4;
+      border: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--accent-strong);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, var(--accent) 0%, #d05b33 100%);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(181, 51, 34, 0.2);
+    }
+
+    .secondary {
+      background: #fff3ec;
+      color: var(--accent-strong);
+      border: 1px solid var(--border);
+    }
+
+    .ghost {
+      background: #fff;
+      color: var(--text);
+      border: 1px dashed var(--border);
+    }
+
+    .tips {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fff7f1;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .paper {
+      display: grid;
+      gap: 16px;
+    }
+
+    .section-title {
+      margin-top: 6px;
+      padding: 0 4px;
+      color: var(--accent-strong);
+      font-size: 20px;
+    }
+
+    .question-card {
+      padding: 22px;
+      animation: rise 0.35s ease both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .question-head {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      flex: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .question-title {
+      font-size: 18px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .option {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fffaf7;
+      border: 1px solid var(--border);
+    }
+
+    .option input {
+      margin-top: 3px;
+      accent-color: var(--accent);
+    }
+
+    .blank-input,
+    .short-answer {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fffdfa;
+      color: var(--text);
+    }
+
+    .short-answer {
+      min-height: 124px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff7f3;
+      border: 1px solid var(--border);
+      display: none;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .result.show {
+      display: block;
+    }
+
+    .result.correct {
+      border-color: rgba(31, 122, 66, 0.25);
+      background: rgba(31, 122, 66, 0.08);
+    }
+
+    .result.incorrect {
+      border-color: rgba(186, 49, 39, 0.25);
+      background: rgba(186, 49, 39, 0.08);
+    }
+
+    .result-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .summary {
+      display: none;
+      margin-bottom: 4px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(181, 51, 34, 0.1), rgba(208, 91, 51, 0.12));
+      border: 1px solid rgba(181, 51, 34, 0.15);
+    }
+
+    .summary.show {
+      display: block;
+    }
+
+    .summary strong {
+      display: block;
+      font-size: 28px;
+      color: var(--accent-strong);
+      margin-bottom: 6px;
+    }
+
+    .summary span {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>党建知识随机练习工具</h1>
+      <p>覆盖你给出的党章、高校基层组织工作条例、习近平新时代中国特色社会主义思想、党的二十大及相关党建知识点。每次自动随机生成一套试题，包含单选、多选、填空、简答，提交后立即显示核对答案，并可继续切换下一套。</p>
+    </section>
+
+    <div class="layout">
+      <aside class="panel">
+        <h2>练习面板</h2>
+        <div class="stats">
+          <div class="stat">
+            <strong id="paperNo">第 1 套</strong>
+            <span>随机组卷，适合反复刷题背诵</span>
+          </div>
+          <div class="stat">
+            <strong id="questionCount">0 题</strong>
+            <span>固定含单选、多选、填空、简答</span>
+          </div>
+          <div class="stat">
+            <strong id="scoreText">未提交</strong>
+            <span>提交后显示客观题得分和主观题参考答案</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="primary" id="submitBtn">提交并核对答案</button>
+          <button class="secondary" id="nextBtn">随机生成下一套</button>
+          <button class="ghost" id="resetBtn">清空本套作答</button>
+        </div>
+        <div class="tips">
+          单选和多选会自动判分。<br>
+          填空题支持常见别名匹配。<br>
+          简答题会给出参考答案，方便你对照背诵。
+        </div>
+      </aside>
+
+      <section class="paper-wrap">
+        <div class="summary" id="summary"></div>
+        <div class="paper" id="paper"></div>
+        <p class="footer-note">建议方法：先闭卷做题，再点“提交并核对答案”，最后切到下一套继续刷。</p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const questionBank = {
+      single: [
+        { id: "s1", prompt: "党的根本宗旨是？", options: ["实现共同富裕", "全心全意为人民服务", "全面依法治国", "建设社会主义现代化强国"], answer: 1, explanation: "党章明确规定，党的根本宗旨是全心全意为人民服务。" },
+        { id: "s2", prompt: "党的最高理想和最终目标是？", options: ["民族复兴", "共同富裕", "实现共产主义", "世界和平"], answer: 2, explanation: "党的最高理想和最终目标是实现共产主义。" },
+        { id: "s3", prompt: "执政兴国的第一要务是？", options: ["稳定", "改革", "发展", "安全"], answer: 2, explanation: "发展是党执政兴国的第一要务。" },
+        { id: "s4", prompt: "党的根本组织原则是？", options: ["群众路线", "民主集中制", "依法治国", "实事求是"], answer: 1, explanation: "党章规定，民主集中制是党的根本组织原则。" },
+        { id: "s5", prompt: "中国特色社会主义最本质的特征是？", options: ["人民当家作主", "依法治国", "中国共产党的领导", "社会主义市场经济"], answer: 2, explanation: "中国特色社会主义最本质的特征是中国共产党的领导。" },
+        { id: "s6", prompt: "党的最大政治优势是？", options: ["理论创新", "密切联系群众", "改革开放", "人才强国"], answer: 1, explanation: "党同人民群众保持血肉联系，是党的最大政治优势。" },
+        { id: "s7", prompt: "党执政后的最大危险是？", options: ["能力不足", "脱离群众", "市场风险", "外部环境变化"], answer: 1, explanation: "脱离群众是党执政后的最大危险。" },
+        { id: "s8", prompt: "“四个意识”中不包括以下哪一项？", options: ["政治意识", "大局意识", "法治意识", "看齐意识"], answer: 2, explanation: "四个意识是政治意识、大局意识、核心意识、看齐意识。" },
+        { id: "s9", prompt: "党的思想路线的核心是？", options: ["独立自主", "实事求是", "全面从严治党", "群众路线"], answer: 1, explanation: "党的思想路线概括起来就是实事求是。" },
+        { id: "s10", prompt: "中国共产党普通高等学校实行的领导体制是？", options: ["校长负责制", "党委领导下的校长负责制", "董事会领导下的校长负责制", "党委会和校长办公会并列负责制"], answer: 1, explanation: "高校实行党委领导下的校长负责制。" },
+        { id: "s11", prompt: "高校党建与思想政治工作的根本标准是？", options: ["科研成果数量", "立德树人成效", "学生就业率", "教学改革数量"], answer: 1, explanation: "坚持以思想政治工作为抓手，以立德树人成效为根本标准。" },
+        { id: "s12", prompt: "党的二十大报告指出，全面建设社会主义现代化国家的首要任务是？", options: ["共同富裕", "高质量发展", "全面深化改革", "文化强国建设"], answer: 1, explanation: "高质量发展是全面建设社会主义现代化国家的首要任务。" },
+        { id: "s13", prompt: "中国式现代化的本质要求不包括下列哪项？", options: ["高质量发展", "全过程人民民主", "照搬西方现代化道路", "丰富人民精神世界"], answer: 2, explanation: "中国式现代化不是照搬西方现代化道路。" },
+        { id: "s14", prompt: "“两个维护”中的首项内容是？", options: ["维护党的团结统一", "维护习近平总书记党中央的核心、全党的核心地位", "维护社会主义制度", "维护人民民主专政"], answer: 1, explanation: "两个维护首先是维护习近平总书记党中央的核心、全党的核心地位。" },
+        { id: "s15", prompt: "党纪学习教育的目标要求是？", options: ["学史明理、学史增信、学史崇德、学史力行", "学纪、知纪、明纪、守纪", "知敬畏、存戒惧、守底线、讲规矩", "抓学习、强作风、提能力、促发展"], answer: 1, explanation: "党纪学习教育的目标要求是学纪、知纪、明纪、守纪。" },
+        { id: "s16", prompt: "2024年印发的《党史学习教育工作条例》明确的核心任务是？", options: ["学纪知纪明纪守纪", "学史明理、学史增信、学史崇德、学史力行", "守正创新、团结奋斗", "立德树人、培根铸魂"], answer: 1, explanation: "《党史学习教育工作条例》强调学史明理、学史增信、学史崇德、学史力行。" },
+        { id: "s17", prompt: "新时代党的组织路线以什么为重点？", options: ["干部监督", "组织体系建设", "基层治理创新", "全面依法治国"], answer: 1, explanation: "新时代党的组织路线以组织体系建设为重点。" },
+        { id: "s18", prompt: "党员无正当理由连续几个月不参加组织生活、不交纳党费、不做党所分配的工作，可按自行脱党处理？", options: ["3个月", "6个月", "9个月", "12个月"], answer: 1, explanation: "连续6个月符合相关情形，可按自行脱党处理。" },
+        { id: "s19", prompt: "党的纪律中不包括以下哪项？", options: ["政治纪律", "组织纪律", "学习纪律", "生活纪律"], answer: 2, explanation: "六大纪律中不包括“学习纪律”。" },
+        { id: "s20", prompt: "高校党委必须设立什么机构，用于培训党员、干部和入党积极分子？", options: ["组织部", "马克思主义学院", "党校", "纪检室"], answer: 2, explanation: "高校党委必须设立党校。" }
+      ],
+      multiple: [
+        { id: "m1", prompt: "党的指导思想包括哪些内容？", options: ["马克思列宁主义", "毛泽东思想", "邓小平理论", "习近平新时代中国特色社会主义思想"], answer: [0, 1, 2, 3], explanation: "这四项均属于党的指导思想内容，还包括“三个代表”重要思想、科学发展观。" },
+        { id: "m2", prompt: "“五位一体”总体布局包括哪些建设？", options: ["经济建设", "政治建设", "文化建设", "社会建设", "生态文明建设"], answer: [0, 1, 2, 3, 4], explanation: "五位一体包括经济、政治、文化、社会、生态文明建设。" },
+        { id: "m3", prompt: "“四个全面”战略布局包括哪些内容？", options: ["全面建设社会主义现代化国家", "全面深化改革", "全面依法治国", "全面从严治党"], answer: [0, 1, 2, 3], explanation: "四个全面这四项都要掌握。" },
+        { id: "m4", prompt: "四项基本原则包括哪些？", options: ["坚持社会主义道路", "坚持人民民主专政", "坚持中国共产党的领导", "坚持马克思列宁主义毛泽东思想"], answer: [0, 1, 2, 3], explanation: "四项基本原则是基础性政治原则。" },
+        { id: "m5", prompt: "发展三大核心包括哪些？", options: ["科技是第一生产力", "人才是第一资源", "创新是第一动力", "开放是第一标准"], answer: [0, 1, 2], explanation: "开放不是“发展三大核心”之一。" },
+        { id: "m6", prompt: "伟大建党精神包括哪些内容？", options: ["坚持真理、坚守理想", "践行初心、担当使命", "不怕牺牲、英勇斗争", "对党忠诚、不负人民"], answer: [0, 1, 2, 3], explanation: "伟大建党精神这四句需要完整记忆。" },
+        { id: "m7", prompt: "群众路线包括哪些表述？", options: ["一切为了群众", "一切依靠群众", "从群众中来", "到群众中去"], answer: [0, 1, 2, 3], explanation: "群众路线的完整表述是“一切为了群众，一切依靠群众，从群众中来，到群众中去”。" },
+        { id: "m8", prompt: "四个自信包括哪些？", options: ["道路自信", "理论自信", "制度自信", "文化自信"], answer: [0, 1, 2, 3], explanation: "四个自信分别是道路、理论、制度、文化自信。" },
+        { id: "m9", prompt: "党的二十大提出的“三个务必”包括哪些？", options: ["务必不忘初心、牢记使命", "务必谦虚谨慎、艰苦奋斗", "务必敢于斗争、善于斗争", "务必自我革命、守正创新"], answer: [0, 1, 2], explanation: "前三项正确，“务必自我革命、守正创新”不属于三个务必原文。" },
+        { id: "m10", prompt: "中国式现代化的中国特色包括哪些？", options: ["人口规模巨大", "全体人民共同富裕", "物质文明和精神文明相协调", "人与自然和谐共生", "走和平发展道路"], answer: [0, 1, 2, 3, 4], explanation: "中国式现代化有5个中国特色，这5项都正确。" },
+        { id: "m11", prompt: "党的六大纪律包括哪些？", options: ["政治纪律", "组织纪律", "廉洁纪律", "群众纪律", "工作纪律", "生活纪律"], answer: [0, 1, 2, 3, 4, 5], explanation: "六大纪律分别是政治、组织、廉洁、群众、工作、生活纪律。" },
+        { id: "m12", prompt: "监督执纪“四种形态”包括哪些？", options: ["红脸出汗成为常态", "党纪轻处分、组织调整成为大多数", "党纪重处分、重大职务调整是少数", "严重违纪涉嫌犯罪追究刑责是极少数"], answer: [0, 1, 2, 3], explanation: "四种形态这四项均需熟记。" }
+      ],
+      blank: [
+        { id: "b1", prompt: "党的根本宗旨是：________。", answers: ["全心全意为人民服务"] },
+        { id: "b2", prompt: "党的最高理想和最终目标是实现________。", answers: ["共产主义"] },
+        { id: "b3", prompt: "发展是党执政兴国的第一________。", answers: ["要务"] },
+        { id: "b4", prompt: "党的根本组织原则是________。", answers: ["民主集中制"] },
+        { id: "b5", prompt: "党的最大政治优势是________。", answers: ["密切联系群众"] },
+        { id: "b6", prompt: "党执政后的最大危险是________。", answers: ["脱离群众"] },
+        { id: "b7", prompt: "“四个意识”是政治意识、大局意识、核心意识、________意识。", answers: ["看齐"] },
+        { id: "b8", prompt: "“四个自信”是道路自信、理论自信、制度自信、________自信。", answers: ["文化"] },
+        { id: "b9", prompt: "“两个维护”是维护习近平总书记党中央的核心、全党的核心地位，维护党中央权威和________领导。", answers: ["集中统一"] },
+        { id: "b10", prompt: "党的思想路线的核心是________。", answers: ["实事求是"] },
+        { id: "b11", prompt: "党的群众路线是：一切为了群众，一切依靠群众，从群众中来，到________中去。", answers: ["群众"] },
+        { id: "b12", prompt: "党员无正当理由连续________个月不参加组织生活、不交党费、不做分配工作，可按自行脱党处理。", answers: ["6", "六"] },
+        { id: "b13", prompt: "预备党员的预备期为________年。", answers: ["1", "一"] },
+        { id: "b14", prompt: "高校实行党委领导下的________负责制。", answers: ["校长"] },
+        { id: "b15", prompt: "高质量发展是全面建设社会主义现代化国家的首要________。", answers: ["任务"] },
+        { id: "b16", prompt: "党的二十大提出，教育、科技、________是全面建设社会主义现代化国家的基础性、战略性支撑。", answers: ["人才"] },
+        { id: "b17", prompt: "党纪学习教育的目标要求是学纪、知纪、明纪、________。", answers: ["守纪"] },
+        { id: "b18", prompt: "《党史学习教育工作条例》的核心任务是学史明理、学史增信、学史崇德、学史________。", answers: ["力行"] },
+        { id: "b19", prompt: "新时代党的组织路线以组织体系建设为________。", answers: ["重点"] },
+        { id: "b20", prompt: "高校党委必须设立________，主要任务是培训党员、干部和入党积极分子。", answers: ["党校"] }
+      ],
+      short: [
+        { id: "q1", prompt: "简述党的性质。", keywords: ["工人阶级先锋队", "中国人民和中华民族先锋队", "中国特色社会主义事业领导核心", "三个代表"], sample: "党的性质：是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求、代表中国先进文化的前进方向、代表中国最广大人民的根本利益。" },
+        { id: "q2", prompt: "简述党的基本路线。", keywords: ["经济建设为中心", "四项基本原则", "改革开放", "社会主义现代化强国"], sample: "党的基本路线：领导和团结全国各族人民，以经济建设为中心，坚持四项基本原则，坚持改革开放，自力更生，艰苦创业，为把我国建设成为富强民主文明和谐美丽的社会主义现代化强国而奋斗。" },
+        { id: "q3", prompt: "简述伟大建党精神。", keywords: ["坚持真理", "坚守理想", "践行初心", "担当使命", "不怕牺牲", "英勇斗争", "对党忠诚", "不负人民"], sample: "伟大建党精神：坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民。" },
+        { id: "q4", prompt: "简述中国式现代化的5个中国特色。", keywords: ["人口规模巨大", "共同富裕", "物质文明和精神文明相协调", "人与自然和谐共生", "和平发展"], sample: "中国式现代化的中国特色：人口规模巨大、全体人民共同富裕、物质文明和精神文明相协调、人与自然和谐共生、走和平发展道路。" },
+        { id: "q5", prompt: "简述“三个务必”。", keywords: ["不忘初心", "牢记使命", "谦虚谨慎", "艰苦奋斗", "敢于斗争", "善于斗争"], sample: "三个务必：务必不忘初心、牢记使命，务必谦虚谨慎、艰苦奋斗，务必敢于斗争、善于斗争。" },
+        { id: "q6", prompt: "简述高校思想政治工作的核心要求。", keywords: ["意识形态工作领导权", "统一领导思政工作", "立德树人", "三全育人"], sample: "高校思想政治工作核心要求：党委牢牢掌握意识形态工作领导权，统一领导思想政治工作，坚持立德树人，形成全员全过程全方位育人机制。" },
+        { id: "q7", prompt: "简述监督执纪“四种形态”。", keywords: ["红脸出汗", "轻处分", "组织调整", "重处分", "重大职务调整", "追究刑责"], sample: "监督执纪“四种形态”：红脸出汗、咬耳扯袖成为常态；党纪轻处分、组织调整成为大多数；党纪重处分、重大职务调整是少数；严重违纪涉嫌犯罪追究刑责是极少数。" },
+        { id: "q8", prompt: "简述新发展理念。", keywords: ["创新", "协调", "绿色", "开放", "共享"], sample: "新发展理念：创新、协调、绿色、开放、共享。其中创新是第一动力，协调是内在要求，绿色是必要条件，开放是必由之路，共享是本质要求。" }
+      ]
+    };
+
+    const paperConfig = { single: 6, multiple: 4, blank: 5, short: 2 };
+    const typeNames = { single: "单选题", multiple: "多选题", blank: "填空题", short: "简答题" };
+
+    const state = {
+      paperNo: 1,
+      currentPaper: [],
+      submitted: false
+    };
+
+    const paperEl = document.getElementById("paper");
+    const summaryEl = document.getElementById("summary");
+    const paperNoEl = document.getElementById("paperNo");
+    const questionCountEl = document.getElementById("questionCount");
+    const scoreTextEl = document.getElementById("scoreText");
+
+    function shuffle(list) {
+      const arr = [...list];
+      for (let i = arr.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function pickQuestions(type, count) {
+      return shuffle(questionBank[type]).slice(0, count).map(item => ({ ...item, type }));
+    }
+
+    function generatePaper() {
+      state.submitted = false;
+      summaryEl.className = "summary";
+      summaryEl.innerHTML = "";
+      scoreTextEl.textContent = "未提交";
+
+      state.currentPaper = [
+        ...pickQuestions("single", paperConfig.single),
+        ...pickQuestions("multiple", paperConfig.multiple),
+        ...pickQuestions("blank", paperConfig.blank),
+        ...pickQuestions("short", paperConfig.short)
+      ];
+
+      renderPaper();
+      paperNoEl.textContent = `第 ${state.paperNo} 套`;
+      questionCountEl.textContent = `${state.currentPaper.length} 题`;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderPaper() {
+      const sections = ["single", "multiple", "blank", "short"];
+      paperEl.innerHTML = "";
+
+      sections.forEach(type => {
+        const questions = state.currentPaper.filter(item => item.type === type);
+        if (!questions.length) return;
+
+        const title = document.createElement("h3");
+        title.className = "section-title";
+        title.textContent = typeNames[type];
+        paperEl.appendChild(title);
+
+        questions.forEach((question, index) => {
+          const overallNo = state.currentPaper.indexOf(question) + 1;
+          const card = document.createElement("article");
+          card.className = "question-card";
+          card.dataset.id = question.id;
+          card.dataset.type = question.type;
+
+          let body = "";
+          if (type === "single" || type === "multiple") {
+            const inputType = type === "single" ? "radio" : "checkbox";
+            const name = `${question.id}-${index}`;
+            body = `
+              <div class="options">
+                ${question.options.map((option, optionIndex) => `
+                  <label class="option">
+                    <input type="${inputType}" name="${name}" value="${optionIndex}">
+                    <span>${String.fromCharCode(65 + optionIndex)}. ${option}</span>
+                  </label>
+                `).join("")}
+              </div>
+            `;
+          } else if (type === "blank") {
+            body = `<input class="blank-input" type="text" placeholder="请输入答案">`;
+          } else {
+            body = `<textarea class="short-answer" placeholder="请输入你的简答内容"></textarea>`;
+          }
+
+          card.innerHTML = `
+            <div class="question-head">
+              <div class="question-title">${overallNo}. ${question.prompt}</div>
+              <span class="badge">${typeNames[type]}</span>
+            </div>
+            ${body}
+            <div class="result"></div>
+          `;
+          paperEl.appendChild(card);
+        });
+      });
+    }
+
+    function normalize(text) {
+      return text.replace(/\s+/g, "").replace(/[，。、“”‘’；：,.!！?？]/g, "").trim();
+    }
+
+    function arraysEqual(a, b) {
+      if (a.length !== b.length) return false;
+      return [...a].sort().every((value, index) => value === [...b].sort()[index]);
+    }
+
+    function checkShortAnswer(text, keywords) {
+      const normalized = normalize(text);
+      const matched = keywords.filter(keyword => normalized.includes(normalize(keyword)));
+      return {
+        matched,
+        total: keywords.length
+      };
+    }
+
+    function showResult(card, html, isCorrect) {
+      const result = card.querySelector(".result");
+      result.className = `result show ${isCorrect ? "correct" : "incorrect"}`;
+      result.innerHTML = html;
+    }
+
+    function submitPaper() {
+      let autoScore = 0;
+      let autoTotal = 0;
+      let shortCount = 0;
+
+      state.currentPaper.forEach(question => {
+        const card = paperEl.querySelector(`[data-id="${question.id}"][data-type="${question.type}"]`);
+
+        if (question.type === "single") {
+          autoTotal += 1;
+          const selected = card.querySelector("input:checked");
+          const selectedIndex = selected ? Number(selected.value) : -1;
+          const correct = selectedIndex === question.answer;
+          if (correct) autoScore += 1;
+          showResult(
+            card,
+            `<div class="result-title">${correct ? "回答正确" : "回答有误"}</div>
+             <div>正确答案：${String.fromCharCode(65 + question.answer)}. ${question.options[question.answer]}</div>
+             <div>解析：${question.explanation}</div>`,
+            correct
+          );
+        }
+
+        if (question.type === "multiple") {
+          autoTotal += 1;
+          const selected = [...card.querySelectorAll("input:checked")].map(item => Number(item.value));
+          const correct = arraysEqual(selected, question.answer);
+          if (correct) autoScore += 1;
+          const answerText = question.answer.map(index => `${String.fromCharCode(65 + index)}. ${question.options[index]}`).join("；");
+          showResult(
+            card,
+            `<div class="result-title">${correct ? "回答正确" : "回答有误"}</div>
+             <div>正确答案：${answerText}</div>
+             <div>解析：${question.explanation}</div>`,
+            correct
+          );
+        }
+
+        if (question.type === "blank") {
+          autoTotal += 1;
+          const input = card.querySelector(".blank-input").value;
+          const normalizedInput = normalize(input);
+          const correct = question.answers.some(answer => normalize(answer) === normalizedInput);
+          if (correct) autoScore += 1;
+          showResult(
+            card,
+            `<div class="result-title">${correct ? "填写正确" : "填写有误"}</div>
+             <div>参考答案：${question.answers[0]}</div>`,
+            correct
+          );
+        }
+
+        if (question.type === "short") {
+          shortCount += 1;
+          const text = card.querySelector(".short-answer").value;
+          const review = checkShortAnswer(text, question.keywords);
+          const pass = review.matched.length >= Math.max(2, Math.ceil(question.keywords.length / 2));
+          showResult(
+            card,
+            `<div class="result-title">${pass ? "要点覆盖较好" : "建议补充要点"}</div>
+             <div>命中关键词：${review.matched.length}/${review.total}</div>
+             <div>参考答案：${question.sample}</div>`,
+            pass
+          );
+        }
+      });
+
+      state.submitted = true;
+      const percent = Math.round((autoScore / autoTotal) * 100);
+      scoreTextEl.textContent = `${autoScore} / ${autoTotal}`;
+      summaryEl.className = "summary show";
+      summaryEl.innerHTML = `
+        <strong>本套客观题得分：${autoScore} / ${autoTotal}</strong>
+        <span>单选、多选、填空已自动判分；本套含 ${shortCount} 道简答题，页面下方已给出参考答案，方便你边做边背。当前客观题正确率约 ${percent}% 。</span>
+      `;
+    }
+
+    function resetAnswers() {
+      paperEl.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => {
+        input.checked = false;
+      });
+      paperEl.querySelectorAll(".blank-input, .short-answer").forEach(input => {
+        input.value = "";
+      });
+      paperEl.querySelectorAll(".result").forEach(result => {
+        result.className = "result";
+        result.innerHTML = "";
+      });
+      summaryEl.className = "summary";
+      summaryEl.innerHTML = "";
+      scoreTextEl.textContent = "未提交";
+      state.submitted = false;
+    }
+
+    document.getElementById("submitBtn").addEventListener("click", submitPaper);
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      state.paperNo += 1;
+      generatePaper();
+    });
+    document.getElementById("resetBtn").addEventListener("click", resetAnswers);
+
+    generatePaper();
+  </script>
+</body>
+</html>
