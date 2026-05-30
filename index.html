@@ -415,6 +415,35 @@
       padding: 10px 0 0;
     }
 
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(180, 35, 24, .28);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity .18s ease, transform .18s ease, background .18s ease;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: var(--primary-2);
+    }
+
     @media (max-width: 900px) {
       .topbar {
         align-items: flex-start;
@@ -439,6 +468,11 @@
       h1 { font-size: 23px; }
       .question-head { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr; }
+
+      .back-top {
+        right: 14px;
+        bottom: 14px;
+      }
     }
   </style>
 </head>
@@ -522,6 +556,7 @@
         <p class="footer-note">建议先用“顺序覆盖”把全部知识点过一遍，再切到“错题复习”集中补弱。</p>
       </section>
     </div>
+    <button class="back-top" id="backTopBtn" type="button" aria-label="回到顶部" title="回到顶部">↑</button>
   </main>
 
   <script src="coverage-data.js"></script>
@@ -558,6 +593,7 @@
     const knowledgePanelEl = document.getElementById("knowledgePanel");
     const knowledgeListEl = document.getElementById("knowledgeList");
     const toggleKnowledgeBtn = document.getElementById("toggleKnowledgeBtn");
+    const backTopBtn = document.getElementById("backTopBtn");
 
     function escapeHtml(value) {
       return String(value ?? "")
@@ -951,6 +987,12 @@ ${escapeHtml(question.point.answer)}</div>
       knowledgePanelEl.classList.toggle("show", state.knowledgeShown);
       toggleKnowledgeBtn.textContent = state.knowledgeShown ? "隐藏知识库" : "显示知识库";
     });
+    backTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", () => {
+      backTopBtn.classList.toggle("show", window.scrollY > 420);
+    }, { passive: true });
 
     coveragePillEl.textContent = `知识点 ${points.length} 个`;
     state.paperNo = 1;
