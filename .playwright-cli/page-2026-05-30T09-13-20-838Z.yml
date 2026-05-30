@@ -1,0 +1,1110 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - heading "党建知识覆盖练习" [level=1] [ref=e5]
+      - paragraph [ref=e6]: 已替换为附件中的新知识点。顺序覆盖会按知识点逐批推进，随机组卷适合刷题，错题复习会只抽取提交时做错或要点不足的题。
+    - generic [ref=e7]: 知识点 100 个
+  - generic [ref=e8]:
+    - complementary [ref=e9]:
+      - heading "练习设置" [level=2] [ref=e10]
+      - tablist "练习模式" [ref=e11]:
+        - button "顺序覆盖" [ref=e12] [cursor=pointer]
+        - button "随机组卷" [ref=e13] [cursor=pointer]
+        - button "错题复习" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - generic [ref=e16]: 知识范围
+        - combobox "知识范围" [ref=e17]:
+          - option "全部知识点" [selected]
+          - option "文章一：应知应会（一）"
+          - option "中国共产党支部工作条例（试行）"
+          - option "中国共产党普通高等学校基层组织工作条例"
+          - option "学习贯彻全国组织工作会议精神"
+          - option "中国共产党纪律处分条例"
+          - option "党史学习教育工作条例"
+          - option "中国共产党党员网络行为规定"
+          - option "学习党的创新理论"
+          - option "树立和践行正确政绩观学习教育"
+      - generic [ref=e18]:
+        - generic [ref=e19]: 每套题量
+        - combobox "每套题量" [ref=e20]:
+          - option "20 题"
+          - option "30 题" [selected]
+          - option "50 题"
+          - option "全部知识点"
+      - generic [ref=e21]:
+        - generic [ref=e22]: 搜索知识点
+        - searchbox "搜索知识点" [ref=e23]
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - strong [ref=e26]: 第 1 套
+          - generic [ref=e27]: 当前组卷
+        - generic [ref=e28]:
+          - strong [ref=e29]: 30 题
+          - generic [ref=e30]: 本套题量
+        - generic [ref=e31]:
+          - strong [ref=e32]: 0 / 23
+          - generic [ref=e33]: 客观题得分
+        - generic [ref=e34]:
+          - strong [ref=e35]: "30"
+          - generic [ref=e36]: 错题本
+      - generic [ref=e37]:
+        - button "提交并查看解析" [ref=e38] [cursor=pointer]
+        - button "生成下一套" [ref=e39] [cursor=pointer]
+        - button "清空本套作答" [ref=e40] [cursor=pointer]
+        - button "隐藏知识库" [active] [ref=e694] [cursor=pointer]
+      - generic [ref=e42]: 解析会展示该题对应知识点的完整内容。简答题按关键词覆盖度给出提示，不影响客观题得分。
+    - generic [ref=e43]:
+      - generic [ref=e535]:
+        - strong [ref=e536]: 客观题得分：0 / 23
+        - text: 正确率约 0%。本套简答题中有 7 题建议继续补充要点；做错或要点不足的知识点已进入错题本。
+      - generic [ref=e695]:
+        - heading "知识库" [level=2] [ref=e696]
+        - generic [ref=e697]:
+          - article [ref=e698]:
+            - heading "01 党的性质" [level=3] [ref=e699]
+            - generic [ref=e701]: 文章一：应知应会（一）
+            - paragraph [ref=e702]: 中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。
+          - article [ref=e703]:
+            - heading "02 党的根本宗旨" [level=3] [ref=e704]
+            - generic [ref=e706]: 文章一：应知应会（一）
+            - paragraph [ref=e707]: 全心全意为人民服务。
+          - article [ref=e708]:
+            - heading "03 党的指导思想" [level=3] [ref=e709]
+            - generic [ref=e711]: 文章一：应知应会（一）
+            - paragraph [ref=e712]: 中国共产党以马克思列宁主义、毛泽东思想、邓小平理论、"三个代表"重要思想、科学发展观、习近平新时代中国特色社会主义思想作为自己的行动指南。
+          - article [ref=e713]:
+            - heading "04 党的最高理想和最终目标" [level=3] [ref=e714]
+            - generic [ref=e716]: 文章一：应知应会（一）
+            - paragraph [ref=e717]: 实现共产主义。
+          - article [ref=e718]:
+            - heading "05 中国共产党的初心使命" [level=3] [ref=e719]
+            - generic [ref=e721]: 文章一：应知应会（一）
+            - paragraph [ref=e722]: 中国共产党自成立以来，始终把为中国人民谋幸福、为中华民族谋复兴作为自己的初心使命，历经百年奋斗，从根本上改变了中国人民的前途命运，开辟了实现中华民族伟大复兴的正确道路，展示了马克思主义的强大生命力，深刻影响了世界历史进程，锻造了走在时代前列的中国共产党。
+          - article [ref=e723]:
+            - heading "06 现阶段我国社会的主要矛盾" [level=3] [ref=e724]
+            - generic [ref=e726]: 文章一：应知应会（一）
+            - paragraph [ref=e727]: 在现阶段，我国社会的主要矛盾是人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。
+          - article [ref=e728]:
+            - heading "07 党在社会主义初级阶段的基本路线" [level=3] [ref=e729]
+            - generic [ref=e731]: 文章一：应知应会（一）
+            - paragraph [ref=e732]: 领导和团结全国各族人民，以经济建设为中心，坚持四项基本原则，坚持改革开放，自力更生，艰苦创业，为把我国建设成为富强民主文明和谐美丽的社会主义现代化强国而奋斗。
+          - article [ref=e733]:
+            - heading "08 \"两个毫不动摇\"" [level=3] [ref=e734]
+            - generic [ref=e736]: 文章一：应知应会（一）
+            - paragraph [ref=e737]: "\"毫不动摇巩固和发展公有制经济\"和\"毫不动摇鼓励、支持、引导非公有制经济发展\"。"
+          - article [ref=e738]:
+            - heading "09 党执政兴国的第一要务" [level=3] [ref=e739]
+            - generic [ref=e741]: 文章一：应知应会（一）
+            - paragraph [ref=e742]: 发展是我们党执政兴国的第一要务。
+          - article [ref=e743]:
+            - heading "10 \"五位一体\"总体布局" [level=3] [ref=e744]
+            - generic [ref=e746]: 文章一：应知应会（一）
+            - paragraph [ref=e747]: 统筹推进经济建设、政治建设、文化建设、社会建设、生态文明建设。
+          - article [ref=e748]:
+            - heading "11 \"四个全面\"战略布局" [level=3] [ref=e749]
+            - generic [ref=e751]: 文章一：应知应会（一）
+            - paragraph [ref=e752]: 协调推进全面建设社会主义现代化国家、全面深化改革、全面依法治国、全面从严治党。
+          - article [ref=e753]:
+            - heading "12 四项基本原则" [level=3] [ref=e754]
+            - generic [ref=e756]: 文章一：应知应会（一）
+            - paragraph [ref=e757]: 坚持社会主义道路、坚持人民民主专政、坚持中国共产党的领导、坚持马克思列宁主义毛泽东思想。
+          - article [ref=e758]:
+            - heading "13 和平共处五项原则" [level=3] [ref=e759]
+            - generic [ref=e761]: 文章一：应知应会（一）
+            - paragraph [ref=e762]: 互相尊重主权和领土完整、互不侵犯、互不干涉内政、平等互利、和平共处五项原则。
+          - article [ref=e763]:
+            - heading "14 伟大建党精神" [level=3] [ref=e764]
+            - generic [ref=e766]: 文章一：应知应会（一）
+            - paragraph [ref=e767]: 坚持真理、坚守理想， 践行初心、担当使命， 不怕牺牲、英勇斗争， 对党忠诚、不负人民。
+          - article [ref=e768]:
+            - heading "15 党的建设的六项基本要求" [level=3] [ref=e769]
+            - generic [ref=e771]: 文章一：应知应会（一）
+            - paragraph [ref=e772]: 第一，坚持党的基本路线。 第二，坚持解放思想，实事求是，与时俱进，求真务实。 第三，坚持新时代党的组织路线。 第四，坚持全心全意为人民服务。 第五，坚持民主集中制。 第六，坚持从严管党治党。
+          - article [ref=e773]:
+            - heading "16 党的最大政治优势" [level=3] [ref=e774]
+            - generic [ref=e776]: 文章一：应知应会（一）
+            - paragraph [ref=e777]: 密切联系群众。
+          - article [ref=e778]:
+            - heading "17 党执政后的最大危险" [level=3] [ref=e779]
+            - generic [ref=e781]: 文章一：应知应会（一）
+            - paragraph [ref=e782]: 脱离群众。
+          - article [ref=e783]:
+            - heading "18 党的根本组织原则" [level=3] [ref=e784]
+            - generic [ref=e786]: 文章一：应知应会（一）
+            - paragraph [ref=e787]: 民主集中制。
+          - article [ref=e788]:
+            - heading "19 党的思想路线" [level=3] [ref=e789]
+            - generic [ref=e791]: 文章一：应知应会（一）
+            - paragraph [ref=e792]: 一切从实际出发，理论联系实际，实事求是，在实践中检验真理和发展真理。
+          - article [ref=e793]:
+            - heading "20 党的群众路线" [level=3] [ref=e794]
+            - generic [ref=e796]: 文章一：应知应会（一）
+            - paragraph [ref=e797]: 一切为了群众，一切依靠群众，从群众中来，到群众中去，把党的正确主张变为群众的自觉行动。
+          - article [ref=e798]:
+            - heading "21 \"四个意识\"" [level=3] [ref=e799]
+            - generic [ref=e801]: 文章一：应知应会（一）
+            - paragraph [ref=e802]: 政治意识、大局意识、核心意识、看齐意识。
+          - article [ref=e803]:
+            - heading "22 \"四个自信\"" [level=3] [ref=e804]
+            - generic [ref=e806]: 文章一：应知应会（一）
+            - paragraph [ref=e807]: 道路自信、理论自信、制度自信、文化自信。
+          - article [ref=e808]:
+            - heading "23 \"两个维护\"" [level=3] [ref=e809]
+            - generic [ref=e811]: 文章一：应知应会（一）
+            - paragraph [ref=e812]: 坚决维护习近平总书记党中央的核心、全党的核心地位，坚决维护以习近平同志为核心的党中央权威和集中统一领导。
+          - article [ref=e813]:
+            - heading "24 中国特色社会主义最本质的特征" [level=3] [ref=e814]
+            - generic [ref=e816]: 文章一：应知应会（一）
+            - paragraph [ref=e817]: 中国共产党的领导是中国特色社会主义最本质的特征，是中国特色社会主义制度的最大优势，党是最高政治领导力量。
+          - article [ref=e818]:
+            - heading "25 申请入党的基本条件" [level=3] [ref=e819]
+            - generic [ref=e821]: 文章一：应知应会（一）
+            - paragraph [ref=e822]: 年满十八岁的中国工人、农民、军人、知识分子和其他社会阶层的先进分子，承认党的纲领和章程，愿意参加党的一个组织并在其中积极工作、执行党的决议和按期交纳党费的，可以申请加入中国共产党。
+          - article [ref=e823]:
+            - heading "26 党员的基本条件" [level=3] [ref=e824]
+            - generic [ref=e826]: 文章一：应知应会（一）
+            - paragraph [ref=e827]: 中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士。 中国共产党党员必须全心全意为人民服务，不惜牺牲个人的一切，为实现共产主义奋斗终身。 中国共产党党员永远是劳动人民的普通一员。除了法律和政策规定范围内的个人利益和工作职权以外，所有共产党员都不得谋求任何私利和特权。
+          - article [ref=e828]:
+            - heading "27 发展党员的原则" [level=3] [ref=e829]
+            - generic [ref=e831]: 文章一：应知应会（一）
+            - paragraph [ref=e832]: 发展党员，必须把政治标准放在首位，经过党的支部，坚持个别吸收的原则。
+          - article [ref=e833]:
+            - heading "28 入党誓词" [level=3] [ref=e834]
+            - generic [ref=e836]: 文章一：应知应会（一）
+            - paragraph [ref=e837]: 我志愿加入中国共产党，拥护党的纲领，遵守党的章程，履行党员义务，执行党的决定，严守党的纪律，保守党的秘密，对党忠诚，积极工作，为共产主义奋斗终身，随时准备为党和人民牺牲一切，永不叛党。
+          - article [ref=e838]:
+            - heading "29 预备党员的教育和考察" [level=3] [ref=e839]
+            - generic [ref=e841]: 文章一：应知应会（一）
+            - paragraph [ref=e842]: 预备党员的义务同正式党员一样。预备党员的权利，除了没有表决权、选举权和被选举权以外，也同正式党员一样。预备党员的预备期，从支部大会通过他为预备党员之日算起。
+          - article [ref=e843]:
+            - heading "30 党龄" [level=3] [ref=e844]
+            - generic [ref=e846]: 文章一：应知应会（一）
+            - paragraph [ref=e847]: 指成为正式党员后的全部时间。党员的党龄，从预备期满转为正式党员之日算起。
+          - article [ref=e848]:
+            - heading "31 党籍" [level=3] [ref=e849]
+            - generic [ref=e851]: 文章一：应知应会（一）
+            - paragraph [ref=e852]: 指党员资格。一个申请入党的同志，当他履行了入党手续，从被批准为预备党员之日起，就取得了党员资格，就有了党籍。取得了党籍，是一个人从组织上被承认为党员的依据。
+          - article [ref=e853]:
+            - heading "32 党员组织关系" [level=3] [ref=e854]
+            - generic [ref=e856]: 文章一：应知应会（一）
+            - paragraph [ref=e857]: 指党员对党的基层组织的隶属关系。
+          - article [ref=e858]:
+            - heading "33 双重组织生活制度" [level=3] [ref=e859]
+            - generic [ref=e861]: 文章一：应知应会（一）
+            - paragraph [ref=e862]: 每个党员，不论职务高低，都必须编入党的一个支部、小组或其他特定组织，参加党的组织生活，接受党内外群众的监督。党员领导干部还必须参加党委、党组的民主生活会。不允许有任何不参加党的组织生活、不接受党内外群众监督的特殊党员。
+          - article [ref=e863]:
+            - heading "34 自行脱党" [level=3] [ref=e864]
+            - generic [ref=e866]: 文章一：应知应会（一）
+            - paragraph [ref=e867]: 党员如果没有正当理由，连续六个月不参加党的组织生活，或不交纳党费，或不做党所分配的工作，就被认为是自行脱党。支部大会应当决定把这样的党员除名，并报上级党组织批准。
+          - article [ref=e868]:
+            - heading "35 \"四个服从\"" [level=3] [ref=e869]
+            - generic [ref=e871]: 文章一：应知应会（一）
+            - paragraph [ref=e872]: 党员个人服从党的组织，少数服从多数，下级组织服从上级组织，全党各个组织和全体党员服从党的全国代表大会和中央委员会。
+          - article [ref=e873]:
+            - heading "36 党的基层组织" [level=3] [ref=e874]
+            - generic [ref=e876]: 文章一：应知应会（一）
+            - paragraph [ref=e877]: 党的基层委员会、总支部委员会、支部委员会每届任期三年至五年。基层委员会、总支部委员会、支部委员会的书记、副书记选举产生后，应报上级党组织批准。 党的基层组织是党在社会基层组织中的战斗堡垒，是党的全部工作和战斗力的基础。
+          - article [ref=e878]:
+            - heading "37 党支部" [level=3] [ref=e879]
+            - generic [ref=e881]: 文章一：应知应会（一）
+            - paragraph [ref=e882]: 党支部是党的基础组织，担负直接教育党员、管理党员、监督党员和组织群众、宣传群众、凝聚群众、服务群众的职责。
+          - article [ref=e883]:
+            - heading "38 党的六大纪律" [level=3] [ref=e884]
+            - generic [ref=e886]: 文章一：应知应会（一）
+            - paragraph [ref=e887]: 政治纪律、组织纪律、廉洁纪律、群众纪律、工作纪律、生活纪律。
+          - article [ref=e888]:
+            - heading "39 五种党纪处分" [level=3] [ref=e889]
+            - generic [ref=e891]: 文章一：应知应会（一）
+            - paragraph [ref=e892]: 对党员的纪律处分有五种：警告、严重警告、撤销党内职务、留党察看、开除党籍。
+          - article [ref=e893]:
+            - heading "40 党的纪律检查机关的主要任务" [level=3] [ref=e894]
+            - generic [ref=e896]: 文章一：应知应会（一）
+            - paragraph [ref=e897]: 党的各级纪律检查委员会是党内监督专责机关，主要任务是：维护党的章程和其他党内法规，检查党的路线、方针、政策和决议的执行情况，协助党的委员会推进全面从严治党、加强党风建设和组织协调反腐败工作，推动完善党和国家监督体系。
+          - article [ref=e898]:
+            - heading "41 共青团的性质、地位和作用" [level=3] [ref=e899]
+            - generic [ref=e901]: 文章一：应知应会（一）
+            - paragraph [ref=e902]: 中国共产主义青年团是中国共产党领导的先进青年的群团组织，是广大青年在实践中学习中国特色社会主义和共产主义的学校，是党的助手和后备军。
+          - article [ref=e903]:
+            - heading "42 党徽党旗" [level=3] [ref=e904]
+            - generic [ref=e906]: 文章一：应知应会（一）
+            - paragraph [ref=e907]: 中国共产党党徽为镰刀和锤头组成的图案；中国共产党党旗为旗面缀有金黄色党徽图案的红旗。 中国共产党的党徽党旗是中国共产党的象征和标志。党的各级组织和每一个党员都要维护党徽党旗的尊严，要按照规定制作和使用党徽党旗。
+          - article [ref=e908]:
+            - heading "01 党支部的职责" [level=3] [ref=e909]
+            - generic [ref=e911]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e912]: 党支部是党的基础组织，是党组织开展工作的基本单元，是党在社会基层组织中的战斗堡垒，是党的全部工作和战斗力的基础，担负直接教育党员、管理党员、监督党员和组织群众、宣传群众、凝聚群众、服务群众的职责。
+          - article [ref=e913]:
+            - heading "02 党支部党员大会" [level=3] [ref=e914]
+            - generic [ref=e916]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e917]: 党支部党员大会是党支部的议事决策机构，由全体党员参加，一般每季度召开1次。党支部党员大会由党支部书记召集并主持，书记不能参加会议的，可以委托副书记或者委员召集并主持。
+          - article [ref=e918]:
+            - heading "03 党课" [level=3] [ref=e919]
+            - generic [ref=e921]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e922]: 党课应当针对党员思想和工作实际，回应普遍关心的问题，注重身边人讲身边事，增强吸引力感染力。党员领导干部应当定期为基层党员讲党课，党委（党组）书记每年至少讲1次党课。
+          - article [ref=e923]:
+            - heading "04 \"三会一课\"" [level=3] [ref=e924]
+            - generic [ref=e926]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e927]: 党支部应当组织党员按期参加党员大会、党小组会和上党课，定期召开党支部委员会会议。"三会一课"应当突出政治学习和教育，突出党性锻炼，以"两学一做"为主要内容，结合党员思想和工作实际，确定主题和具体方式，做到形式多样、氛围庄重。
+          - article [ref=e928]:
+            - heading "05 主题党日" [level=3] [ref=e929]
+            - generic [ref=e931]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e932]: 党支部每月相对固定1天开展主题党日，组织党员集中学习、过组织生活、进行民主议事和志愿服务等。主题党日开展前，党支部应当认真研究确定主题和内容；开展后，应当抓好议定事项的组织落实。
+          - article [ref=e933]:
+            - heading "06 组织生活会" [level=3] [ref=e934]
+            - generic [ref=e936]: 中国共产党支部工作条例（试行）
+            - paragraph [ref=e937]: 党支部每年至少召开1次组织生活会，一般安排在第四季度，也可以根据工作需要随时召开。组织生活会一般以党支部党员大会、党支部委员会会议或者党小组会形式召开。组织生活会应当确定主题，会前认真学习，谈心谈话，听取意见；会上查摆问题，开展批评和自我批评，明确整改方向；会后制定整改措施，逐一整改落实。
+          - article [ref=e938]:
+            - heading "01 总则" [level=3] [ref=e939]
+            - generic [ref=e941]: 中国共产党普通高等学校基层组织工作条例
+            - paragraph [ref=e942]: 高校党组织必须高举中国特色社会主义伟大旗帜，以马克思列宁主义、毛泽东思想、邓小平理论、"三个代表"重要思想、科学发展观、习近平新时代中国特色社会主义思想为指导，增强"四个意识"、坚定"四个自信"、做到"两个维护"，全面贯彻党的基本理论、基本路线、基本方略，全面贯彻党的教育方针，坚持教育为人民服务、为中国共产党治国理政服务、为巩固和发展中国特色社会主义制度服务、为改革开放和社会主义现代化建设服务、坚守为党育人、为国育才，培养德智体美劳全面发展的社会主义建设者和接班人。 高校实行党委领导下的校长负责制 高校党的委员会全面领导学校工作，支持校长按照《中华人民共和国高等教育法》的规定积极主动、独立负责地开展工作，保证教学、科研、行政管理等各项任务的完成。 高校党委实行民主集中制，健全集体领导和个人分工负责相结合的制度 凡属重大问题都应当按照集体领导、民主集中、个别酝酿、会议决定的原则，由党委集体讨论，作出决定；党委成员应当根据集体的决定和分工，切实履行职责。 高校党组织工作应当遵循的原则 坚持党管办学方向、党管干部、党管人才、党管意识形态，领导改革发展。 坚持全面从严治党。 坚持高校党的建设与人才培养、科学研究、社会服务、文化传承创新、国际交流合作等深度融合。 坚持把思想政治工作作为开展高校党的建设的重要抓手，把立德树人成效作为检验高校党的建设工作的根本标准。 坚持抓基层强基础，健全高校党的组织体系、制度体系和工作机制。
+          - article [ref=e943]:
+            - heading "02 组织设置" [level=3] [ref=e944]
+            - generic [ref=e946]: 中国共产党普通高等学校基层组织工作条例
+            - paragraph [ref=e947]: 高校院（系）级单位根据工作需要和党员人数，经学校党委批准，设立党的基层委员会、总支部委员会、支部委员会。 党的基层委员会由党员大会或者党员代表大会选举产生，党的总支部委员会、支部委员会由党员大会选举产生。 院（系）党组织每届任期一般为5年。 有正式党员7人以上的党支部，应当设立党支部委员会；正式党员不足7人的党支部，设1名书记，必要时可以设1名副书记，由党支部党员大会选举产生。 党支部委员会和不设支部委员会的支部书记、副书记每届任期一般为3年。 注重选拔党性强、业务精、有威信、肯奉献的党员学术带头人担任教师党支部书记。注重从优秀辅导员、骨干教师、优秀学生党员中选拔学生党支部书记。管理、后勤等部门党支部书记一般由本部门主要负责人担任。
+          - article [ref=e948]:
+            - heading "03 党员队伍建设" [level=3] [ref=e949]
+            - generic [ref=e951]: 中国共产党普通高等学校基层组织工作条例
+            - paragraph [ref=e952]: 构建党员经常性学习教育体系 高校党组织应当构建多层次、多渠道的党员经常性学习教育体系，加强政治理论教育和党史教育，突出政治教育和政治训练，强化党章党规党纪教育、党的宗旨教育、革命传统教育、形势政策教育和知识技能教育，推进"两学一做"学习教育常态化制度化，建立和落实不忘初心、牢记使命的制度。 严格党的组织生活 坚持开展批评和自我批评，提高"三会一课"质量，开好民主生活会和组织生活会，健全落实谈心谈话、民主评议党员、主题党日等制度，确保党的组织生活经常、认真、严肃。 强化党员日常管理 （1）及时转接党员组织关系，督促党员按期足额交纳党费。 （2）加强流动党员管理和服务，做好毕业生党员、出国（境）学习研究党员组织关系和党籍管理工作。 （3）关心党员思想、学习、工作和生活，健全党内关怀、帮扶长效机制。 （4）搭建党员发挥先锋模范作用平台，健全党员联系和服务群众工作体系。 （5）妥善处置不合格党员，严格执行党的纪律。 尊重党员主体地位 尊重党员主体地位，发扬党内民主，保障党员权利，推进党务公开。高校党组织讨论决定重要事项前，应当充分听取党员的意见，党内重要情况及时向党员通报。 发展党员工作 按照坚持标准、保证质量、改善结构、慎重发展的方针和有关规定，把政治标准放在首位，加强对入党积极分子的教育、培养和考察，加强在高层次人才、优秀青年教师和优秀学生中发展党员工作。 建立党员领导干部和党员学术带头人直接联系培养教师入党积极分子制度。 将团组织推优作为确定学生入党积极分子的重要渠道。 建立从高中到大学、从大学到研究生阶段入党积极分子接续培养机制，加大在高校低年级学生中发展党员力度。 党校 高校党委应当设立党校。党校的主要任务是培训党员、干部和入党积极分子。
+          - article [ref=e953]:
+            - heading "04 思想政治工作" [level=3] [ref=e954]
+            - generic [ref=e956]: 中国共产党普通高等学校基层组织工作条例
+            - paragraph [ref=e957]: 根本要求 高校党委应当牢牢掌握党对学校意识形态工作的领导权，统一领导学校思想政治工作。发挥行政系统、群团组织、学术组织和广大教职工的作用，共同做好思想政治工作。 目标任务 （1）把理想信念教育放在首位 高校党组织应当把理想信念教育放在首位，对师生员工进行马克思列宁主义、毛泽东思想和中国特色社会主义理论体系的教育，推动习近平新时代中国特色社会主义思想进教材、进课堂、进头脑，做好党的基本路线教育，爱国主义、集体主义和社会主义思想教育，党史、新中国史、改革开放史、社会主义发展史教育，中华优秀传统文化、革命文化、社会主义先进文化教育，国情教育、形势政策教育、社会主义民主法治教育、国家安全教育和民族团结进步教育。 把培育和践行社会主义核心价值观融入大学生思想政治教育工作和师德师风建设的全过程，帮助广大师生员工树立正确的世界观、人生观和价值观，坚定中国特色社会主义道路自信、理论自信、制度自信、文化自信。 （2）把立德树人作为根本任务 高校党组织应当把立德树人作为根本任务，构建思想政治工作体系，加强意识形态阵地管理。充分发挥课堂教学的主渠道作用，办好思想政治理论课，推进课程思政建设，拓展新时代大学生思想政治教育的有效途径，形成全员全过程全方位育人的良好氛围和工作机制。 （3）原则方法 思想政治工作应当坚持理论联系实际，定期分析师生员工的思想动态，坚持解决思想问题与解决实际问题相结合，注重人文关怀和心理疏导，区别不同层次，采取多种方式，推动思想政治工作传统优势和信息技术高度融合，增强思想政治工作的针对性、实效性。
+          - article [ref=e958]:
+            - heading "01 新时代党的组织路线" [level=3] [ref=e959]
+            - generic [ref=e961]: 学习贯彻全国组织工作会议精神
+            - paragraph [ref=e962]: 全面贯彻习近平新时代中国特色社会主义思想，以组织体系建设为重点，着力培养忠诚干净担当的高素质干部，着力集聚爱国奉献的各方面优秀人才，坚持德才兼备、以德为先、任人唯贤，为坚持和加强党的全面领导、坚持和发展中国特色社会主义提供坚强组织保证。
+          - article [ref=e963]:
+            - heading "02 党的组织体系" [level=3] [ref=e964]
+            - generic [ref=e966]: 学习贯彻全国组织工作会议精神
+            - paragraph [ref=e967]: 我们党是按照马克思主义建党原则建立起来的，形成了严密的组织体系。党的组织自上而下分为三个层次：党的中央组织、党的地方组织和党的基层组织。
+          - article [ref=e968]:
+            - heading "01 对党员的纪律处分种类" [level=3] [ref=e969]
+            - generic [ref=e971]: 中国共产党纪律处分条例
+            - paragraph [ref=e972]: （1）警告 （2）严重警告 （3）撤销党内职务 （4）留党察看 （5）开除党籍
+          - article [ref=e973]:
+            - heading "02 党的纪律处分工作遵循原则" [level=3] [ref=e974]
+            - generic [ref=e976]: 中国共产党纪律处分条例
+            - paragraph [ref=e977]: （1）坚持党要管党、全面从严治党 （2）党纪面前一律平等 （3）实事求是 （4）民主集中制 （5）惩前毖后、治病救人
+          - article [ref=e978]:
+            - heading "03 监督执纪\"四种形态\"" [level=3] [ref=e979]
+            - generic [ref=e981]: 中国共产党纪律处分条例
+            - paragraph [ref=e982]: 深化运用监督执纪"四种形态"，经常开展批评和自我批评，及时进行谈话提醒、批评教育、责令检查、诫勉，让"红红脸、出出汗"成为常态；党纪轻处分、组织调整成为违纪处理的大多数；党纪重处分、重大职务调整的成为少数；严重违纪涉嫌犯罪追究刑事责任的成为极少数。
+          - article [ref=e983]:
+            - heading "04 执纪审查重点" [level=3] [ref=e984]
+            - generic [ref=e986]: 中国共产党纪律处分条例
+            - paragraph [ref=e987]: 违犯党纪行为的执纪审查重点是：重点查处党的十八大以来不收敛、不收手，问题线索反映集中、群众反映强烈，政治问题和经济问题交织的腐败案件，违反中央八项规定精神的问题。
+          - article [ref=e988]:
+            - heading "05 从重或者加重处分的情形" [level=3] [ref=e989]
+            - generic [ref=e991]: 中国共产党纪律处分条例
+            - paragraph [ref=e992]: 有下列情形之一的，应当从重或者加重处分： （1）强迫、唆使他人违纪； （2）拒不上交或者退赔违纪所得； （3）违纪受处分后又因故意违纪应当受到党纪处分； （4）违纪受处分后，又被发现其受处分前没有交代的其他应当受到党纪处分的问题； （5）党内法规规定的其他从重或者加重处分情形。
+          - article [ref=e993]:
+            - heading "06 部分条款" [level=3] [ref=e994]
+            - generic [ref=e996]: 中国共产党纪律处分条例
+            - paragraph [ref=e997]: 第三十六条 预备党员违犯党纪，情节较轻，可以保留预备党员资格的，党组织应当对其批评教育或者延长预备期；情节较重的，应当取消其预备党员资格。 第六十九条 对信仰宗教的党员，应当加强思想教育，要求其限期改正；经党组织帮助教育仍没有转变的，应当劝其退党；劝而不退的，予以除名；参与利用宗教搞煽动活动的，给予开除党籍处分。
+          - article [ref=e998]:
+            - heading "01 党史学习教育工作四个方面的主要任务" [level=3] [ref=e999]
+            - generic [ref=e1001]: 党史学习教育工作条例
+            - paragraph [ref=e1002]: 学史明理、学史增信、学史崇德、学史力行。
+          - article [ref=e1003]:
+            - heading "02 党史学习教育应突出哪些内容" [level=3] [ref=e1004]
+            - generic [ref=e1006]: 党史学习教育工作条例
+            - paragraph [ref=e1007]: 《党史学习教育工作条例》坚持学党史和悟思想相统一，把学习党的创新理论摆在党史学习教育的首要位置。《条例》对学习党史基本内容和宝贵历史经验，弘扬伟大建党精神，树立正确党史观等作出明确规定。
+          - article [ref=e1008]:
+            - heading "03 开展党史学习教育的主要方式" [level=3] [ref=e1009]
+            - generic [ref=e1011]: 党史学习教育工作条例
+            - paragraph [ref=e1012]: 包括党员自学和组织学习两种方式。
+          - article [ref=e1013]:
+            - heading "01 《中国共产党党员网络行为规定》（部分）" [level=3] [ref=e1014]
+            - generic [ref=e1016]: 中国共产党党员网络行为规定
+            - paragraph [ref=e1017]: 第七条 党员应当敢于斗争、善于斗争，对网上各类错误思潮和错误观点敢于亮剑发声，旗帜鲜明批驳谬误。 第八条 鼓励党员通过网络讲好中国特色社会主义的故事、中国共产党的故事、中国人民奋斗圆梦的故事、中华优秀传统文化的故事、中国和平发展的故事，向世界展现真实、立体、全面的中国。 第十二条 党员不得通过网络制造、散布、传播政治谣言，不得匿名诬告、有意陷害或者制造其他谣言。 第十四条 党员不得擅自建立、使用非法定信道浏览、访问、使用境外的网站、应用程序等。 第十七条 党员应当培育良好网络习惯，自觉抵制崇洋媚外、炫富斗阔、铺张浪费等不良网络文化，炒作绯闻丑闻、拉踩引战、刷量控评、直播打赏、沉迷网络游戏等不良网络现象。 第二十一条 党员发现网上违规违纪违法信息、活动的，应当及时向有关部门和网络平台举报，积极提供线索，协助有关方面处置。
+          - article [ref=e1018]:
+            - heading "01 \"四个伟大\"" [level=3] [ref=e1019]
+            - generic [ref=e1021]: 学习党的创新理论
+            - paragraph [ref=e1022]: 伟大斗争，伟大工程，伟大事业，伟大梦想
+          - article [ref=e1023]:
+            - heading "02 中国共产党百年奋斗的\"四个伟大成就\"" [level=3] [ref=e1024]
+            - generic [ref=e1026]: 学习党的创新理论
+            - paragraph [ref=e1027]: 党领导人民浴血奋战、百折不挠，创造了新民主主义革命的伟大成就；党领导人民自力更生、发愤图强，创造了社会主义革命和建设的伟大成就；党领导人民解放思想、锐意进取，创造了改革开放和社会主义现代化建设的伟大成就；党领导人民自信自强、守正创新，创造了新时代中国特色社会主义的伟大成就。
+          - article [ref=e1028]:
+            - heading "03 \"两个一百年\"奋斗目标" [level=3] [ref=e1029]
+            - generic [ref=e1031]: 学习党的创新理论
+            - paragraph [ref=e1032]: 在新世纪新时代，经济和社会发展的战略目标是，到建党一百年时，全面建成小康社会；到新中国成立一百年时，全面建成社会主义现代化强国。
+          - article [ref=e1033]:
+            - heading "04 \"两个结合\"" [level=3] [ref=e1034]
+            - generic [ref=e1036]: 学习党的创新理论
+            - paragraph [ref=e1037]: 把马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合。
+          - article [ref=e1038]:
+            - heading "05 新质生产力的基本内涵" [level=3] [ref=e1039]
+            - generic [ref=e1041]: 学习党的创新理论
+            - paragraph [ref=e1042]: 新质生产力是创新起主导作用，摆脱传统经济增长方式、生产力发展路径，具有高科技、高效能、高质量特征，符合新发展理念的先进生产力质态。它由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生，以劳动者、劳动资料、劳动对象及其优化组合的跃升为基本内涵，以全要素生产率大幅提升为核心标志，特点是创新，关键在质优，本质是先进生产力。
+          - article [ref=e1043]:
+            - heading "06 新发展理念" [level=3] [ref=e1044]
+            - generic [ref=e1046]: 学习党的创新理论
+            - paragraph [ref=e1047]: 党的十八届五中全会提出：实现"十三五"时期发展目标，破解发展难题，厚植发展优势，必须牢固树立创新、协调、绿色、开放、共享的发展理念。 （1）创新是引领发展的第一动力； （2）协调是持续健康发展的内在要求； （3）绿色是永续发展的必要条件和人民对美好生活追求的重要体现； （4）开放是国家繁荣发展的必由之路； （5）共享是中国特色社会主义的本质要求。
+          - article [ref=e1048]:
+            - heading "07 我国的基本国情" [level=3] [ref=e1049]
+            - generic [ref=e1051]: 学习党的创新理论
+            - paragraph [ref=e1052]: 我国仍处于并将长期处于社会主义初级阶段。
+          - article [ref=e1053]:
+            - heading "08 党和国家工作总基调" [level=3] [ref=e1054]
+            - generic [ref=e1056]: 学习党的创新理论
+            - paragraph [ref=e1057]: 稳中求进。
+          - article [ref=e1058]:
+            - heading "09 我国的根本政治制度" [level=3] [ref=e1059]
+            - generic [ref=e1061]: 学习党的创新理论
+            - paragraph [ref=e1062]: 人民代表大会制度。
+          - article [ref=e1063]:
+            - heading "10 我国的基本政治制度" [level=3] [ref=e1064]
+            - generic [ref=e1066]: 学习党的创新理论
+            - paragraph [ref=e1067]: 中国共产党领导的多党合作和政治协商制度、民族区域自治制度、基层群众自治制度。
+          - article [ref=e1068]:
+            - heading "11 社会主义民主政治的本质和核心" [level=3] [ref=e1069]
+            - generic [ref=e1071]: 学习党的创新理论
+            - paragraph [ref=e1072]: 人民当家作主。
+          - article [ref=e1073]:
+            - heading "12 当代中国发展进步的根本方向" [level=3] [ref=e1074]
+            - generic [ref=e1076]: 学习党的创新理论
+            - paragraph [ref=e1077]: 中国特色社会主义。
+          - article [ref=e1078]:
+            - heading "13 新时代坚持和发展中国特色社会主义的根本动力" [level=3] [ref=e1079]
+            - generic [ref=e1081]: 学习党的创新理论
+            - paragraph [ref=e1082]: 全面深化改革
+          - article [ref=e1083]:
+            - heading "14 社会主义现代化建设的三个重要支点" [level=3] [ref=e1084]
+            - generic [ref=e1086]: 学习党的创新理论
+            - paragraph [ref=e1087]: 改革、发展、稳定。
+          - article [ref=e1088]:
+            - heading "15 全面深化改革的出发点和落脚点" [level=3] [ref=e1089]
+            - generic [ref=e1091]: 学习党的创新理论
+            - paragraph [ref=e1092]: 促进社会公平正义、增进人民福祉
+          - article [ref=e1093]:
+            - heading "16 党在新时代的强军目标" [level=3] [ref=e1094]
+            - generic [ref=e1096]: 学习党的创新理论
+            - paragraph [ref=e1097]: 建设一支听党指挥、能打胜仗、作风优良的人民军队，把人民军队建设成为世界一流军队。
+          - article [ref=e1098]:
+            - heading "17 党的思想建设的首要任务" [level=3] [ref=e1099]
+            - generic [ref=e1101]: 学习党的创新理论
+            - paragraph [ref=e1102]: 坚定理想信念。
+          - article [ref=e1103]:
+            - heading "18 党的政治建设的首要任务" [level=3] [ref=e1104]
+            - generic [ref=e1106]: 学习党的创新理论
+            - paragraph [ref=e1107]: 保证全党服从中央，坚持党中央权威和集中统一领导。
+          - article [ref=e1108]:
+            - heading "19 新时代新的文化使命" [level=3] [ref=e1109]
+            - generic [ref=e1111]: 学习党的创新理论
+            - paragraph [ref=e1112]: 在新的起点上继续推动文化繁荣、建设文化强国、建设中华民族现代文明。
+          - article [ref=e1113]:
+            - heading "20 习近平外交思想的核心理念" [level=3] [ref=e1114]
+            - generic [ref=e1116]: 学习党的创新理论
+            - paragraph [ref=e1117]: 构建人类命运共同体。
+          - article [ref=e1118]:
+            - heading "21 新时代党的民族工作主线" [level=3] [ref=e1119]
+            - generic [ref=e1121]: 学习党的创新理论
+            - paragraph [ref=e1122]: 铸牢中华民族共同体意识。
+          - article [ref=e1123]:
+            - heading "22 总体国家安全观的总体要求" [level=3] [ref=e1124]
+            - generic [ref=e1126]: 学习党的创新理论
+            - paragraph [ref=e1127]: 坚持总体国家安全观，必须坚持国家利益至上，以人民安全为宗旨，以政治安全为根本，以经济安全为基础，以军事科技文化社会安全为保障，以促进国际安全为依托，维护各领域国家安全，推进国家安全体系和能力现代化，走中国特色国家安全道路。
+          - article [ref=e1128]:
+            - heading "23 \"一带一路\"" [level=3] [ref=e1129]
+            - generic [ref=e1131]: 学习党的创新理论
+            - paragraph [ref=e1132]: 丝绸之路经济带和二十一世纪海上丝绸之路。
+          - article [ref=e1133]:
+            - heading "24 新时代\"三农\"工作总抓手" [level=3] [ref=e1134]
+            - generic [ref=e1136]: 学习党的创新理论
+            - paragraph [ref=e1137]: 实施乡村振兴战略。
+          - article [ref=e1138]:
+            - heading "25 党的生命线和根本工作路线" [level=3] [ref=e1139]
+            - generic [ref=e1141]: 学习党的创新理论
+            - paragraph [ref=e1142]: 群众路线。
+          - article [ref=e1143]:
+            - heading "26 \"四风\"问题" [level=3] [ref=e1144]
+            - generic [ref=e1146]: 学习党的创新理论
+            - paragraph [ref=e1147]: 形式主义、官僚主义、享乐主义和奢靡之风。
+          - article [ref=e1148]:
+            - heading "27 长征精神" [level=3] [ref=e1149]
+            - generic [ref=e1151]: 学习党的创新理论
+            - paragraph [ref=e1152]: 把全国人民和中华民族的根本利益看得高于一切，坚定革命的理想和信念，坚信正义事业必然胜利的精神； 为了救国救民，不怕任何艰难险阻，不惜付出一切牺牲的精神； 坚持独立自主、实事求是，一切从实际出发的精神； 顾全大局、严守纪律、紧密团结的精神；紧紧依靠人民群众，同人民群众生死相依、患难与共、艰苦奋斗的精神。
+          - article [ref=e1153]:
+            - heading "01 指导思想" [level=3] [ref=e1154]
+            - generic [ref=e1156]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1157]: 习近平新时代中国特色社会主义思想。
+          - article [ref=e1158]:
+            - heading "02 总要求" [level=3] [ref=e1159]
+            - generic [ref=e1161]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1162]: 立党为公、为民造福、科学决策、真抓实干。
+          - article [ref=e1163]:
+            - heading "03 在全党开展树立和践行正确政绩观学习教育的重大意义" [level=3] [ref=e1164]
+            - generic [ref=e1166]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1167]: （1）在全党开展树立和践行正确政绩观学习教育，是贯彻落实党的二十届四中全会战略部署、确保基本实现社会主义现代化取得决定性进展的必然要求。 （2）是践行党的根本宗旨、夯实党的执政根基的重要举措。 （3）是巩固拓展党内集中学习教育成果、持之以恒推进全面从严治党的有效途径，对于推进党和国家事业、对于推进全面从严治党意义重大。
+          - article [ref=e1168]:
+            - heading "04 核心要义" [level=3] [ref=e1169]
+            - generic [ref=e1171]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1172]: 围绕"政绩为谁而树、树什么样的政绩、靠什么树政绩"展开。
+          - article [ref=e1173]:
+            - heading "05 根本价值取向" [level=3] [ref=e1174]
+            - generic [ref=e1176]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1177]: 造福人民
+          - article [ref=e1178]:
+            - heading "06 政绩观的首要问题" [level=3] [ref=e1179]
+            - generic [ref=e1181]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1182]: 为什么人的问题，是政绩观的首要问题，检验着一个政党的性质宗旨，决定着干事创业的根本方向。
+          - article [ref=e1183]:
+            - heading "07 检验政绩观的重要标准" [level=3] [ref=e1184]
+            - generic [ref=e1186]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1187]: 把为老百姓办了多少好事实事作为检验政绩的重要标准。
+          - article [ref=e1188]:
+            - heading "08 树立和践行正确政绩观的内在要求和重要内容" [level=3] [ref=e1189]
+            - generic [ref=e1191]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1192]: （1）坚持高质量发展 （2）完整准确全面贯彻新发展理念。 （3）坚持实事求是、科学决策，自觉按规律办事。
+          - article [ref=e1193]:
+            - heading "09 政绩观和党性的关系" [level=3] [ref=e1194]
+            - generic [ref=e1196]: 树立和践行正确政绩观学习教育
+            - paragraph [ref=e1197]: 树立和践行正确政绩观，起决定性作用的是党性。只有党性坚强、摒弃私心杂念，才能保证政绩观不出偏差。
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: 本套覆盖 30 个知识点
+          - generic [ref=e47]: 按顺序推进
+        - article [ref=e48]:
+          - generic [ref=e50]:
+            - generic [ref=e51]: 1. 下面哪一项对应这段表述：中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广...
+            - generic [ref=e52]:
+              - generic [ref=e53]: 单选题
+              - generic [ref=e54]: 文章一：应知应会（一）
+              - generic [ref=e55]: 01 党的性质
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - radio "A. 党的性质" [ref=e58]
+              - generic [ref=e59]: A. 党的性质
+            - generic [ref=e60]:
+              - radio "B. 党支部的职责" [ref=e61]
+              - generic [ref=e62]: B. 党支部的职责
+            - generic [ref=e63]:
+              - radio "C. 新发展理念" [ref=e64]
+              - generic [ref=e65]: C. 新发展理念
+            - generic [ref=e66]:
+              - radio "D. \"一带一路\"" [ref=e67]
+              - generic [ref=e68]: D. "一带一路"
+          - generic [ref=e537]:
+            - generic [ref=e538]: 回答有误
+            - generic [ref=e539]: 正确答案：A. 党的性质
+            - generic [ref=e540]:
+              - strong [ref=e541]: 完整知识点：
+              - text: 中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。
+        - article [ref=e69]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: 2. 关于“党的根本宗旨”，下列哪些属于该知识点内容？
+            - generic [ref=e73]:
+              - generic [ref=e74]: 多选题
+              - generic [ref=e75]: 文章一：应知应会（一）
+              - generic [ref=e76]: 02 党的根本宗旨
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - checkbox "A. 中国特色社会主义" [ref=e79]
+              - generic [ref=e80]: A. 中国特色社会主义
+            - generic [ref=e81]:
+              - checkbox "B. 全心全意为人民服务。" [ref=e82]
+              - generic [ref=e83]: B. 全心全意为人民服务。
+            - generic [ref=e84]:
+              - checkbox "C. 我国仍处于并将长期处于社会主义初级阶段" [ref=e85]
+              - generic [ref=e86]: C. 我国仍处于并将长期处于社会主义初级阶段
+            - generic [ref=e87]:
+              - checkbox "D. 中国共产主义青年团是中国共产党领导的先进青年的群团组织" [ref=e88]
+              - generic [ref=e89]: D. 中国共产主义青年团是中国共产党领导的先进青年的群团组织
+            - generic [ref=e90]:
+              - checkbox "E. 中国共产党自成立以来" [ref=e91]
+              - generic [ref=e92]: E. 中国共产党自成立以来
+          - generic [ref=e542]:
+            - generic [ref=e543]: 回答有误
+            - generic [ref=e544]: 正确答案：B. 全心全意为人民服务。
+            - generic [ref=e545]:
+              - strong [ref=e546]: 完整知识点：
+              - text: 全心全意为人民服务。
+        - article [ref=e93]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: 3. 请填写“党的指导思想”的核心关键词或核心短句。
+            - generic [ref=e97]:
+              - generic [ref=e98]: 填空题
+              - generic [ref=e99]: 文章一：应知应会（一）
+              - generic [ref=e100]: 03 党的指导思想
+          - textbox "输入关键词或核心短句" [ref=e101]
+          - generic [ref=e547]:
+            - generic [ref=e548]: 填写有误
+            - generic [ref=e549]: 参考关键词：中国共产党以马克思列宁主义
+            - generic [ref=e550]:
+              - strong [ref=e551]: 完整知识点：
+              - text: 中国共产党以马克思列宁主义、毛泽东思想、邓小平理论、"三个代表"重要思想、科学发展观、习近平新时代中国特色社会主义思想作为自己的行动指南。
+        - article [ref=e102]:
+          - generic [ref=e104]:
+            - generic [ref=e105]: 4. 简述“党的最高理想和最终目标”。
+            - generic [ref=e106]:
+              - generic [ref=e107]: 简答题
+              - generic [ref=e108]: 文章一：应知应会（一）
+              - generic [ref=e109]: 04 党的最高理想和最终目标
+          - textbox "写下你能想到的要点" [ref=e110]
+          - generic [ref=e552]:
+            - generic [ref=e553]: 建议补充要点
+            - generic [ref=e554]: 命中关键词：0/2
+            - generic [ref=e555]: 已命中：暂无明显命中
+            - generic [ref=e556]:
+              - strong [ref=e557]: 完整知识点：
+              - text: 实现共产主义。
+        - article [ref=e111]:
+          - generic [ref=e113]:
+            - generic [ref=e114]: 5. 下面哪一项对应这段表述：中国共产党自成立以来，始终把为中国人民谋幸福、为中华民族谋复兴作为自己的初心使命，历经百年奋斗，从根本上改变了中国人民的前途命运，开辟了实现中华民族伟大复兴的正确道路，展示...
+            - generic [ref=e115]:
+              - generic [ref=e116]: 单选题
+              - generic [ref=e117]: 文章一：应知应会（一）
+              - generic [ref=e118]: 05 中国共产党的初心使命
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - radio "A. 党的组织体系" [ref=e121]
+              - generic [ref=e122]: A. 党的组织体系
+            - generic [ref=e123]:
+              - radio "B. 监督执纪\"四种形态\"" [ref=e124]
+              - generic [ref=e125]: B. 监督执纪"四种形态"
+            - generic [ref=e126]:
+              - radio "C. 中国共产党百年奋斗的\"四个伟大成就\"" [ref=e127]
+              - generic [ref=e128]: C. 中国共产党百年奋斗的"四个伟大成就"
+            - generic [ref=e129]:
+              - radio "D. 中国共产党的初心使命" [ref=e130]
+              - generic [ref=e131]: D. 中国共产党的初心使命
+          - generic [ref=e558]:
+            - generic [ref=e559]: 回答有误
+            - generic [ref=e560]: 正确答案：D. 中国共产党的初心使命
+            - generic [ref=e561]:
+              - strong [ref=e562]: 完整知识点：
+              - text: 中国共产党自成立以来，始终把为中国人民谋幸福、为中华民族谋复兴作为自己的初心使命，历经百年奋斗，从根本上改变了中国人民的前途命运，开辟了实现中华民族伟大复兴的正确道路，展示了马克思主义的强大生命力，深刻影响了世界历史进程，锻造了走在时代前列的中国共产党。
+        - article [ref=e132]:
+          - generic [ref=e134]:
+            - generic [ref=e135]: 6. 关于“现阶段我国社会的主要矛盾”，下列哪些属于该知识点内容？
+            - generic [ref=e136]:
+              - generic [ref=e137]: 多选题
+              - generic [ref=e138]: 文章一：应知应会（一）
+              - generic [ref=e139]: 06 现阶段我国社会的主要矛盾
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - checkbox "A. 实现共产主义" [ref=e142]
+              - generic [ref=e143]: A. 实现共产主义
+            - generic [ref=e144]:
+              - checkbox "B. 一切为了群众" [ref=e145]
+              - generic [ref=e146]: B. 一切为了群众
+            - generic [ref=e147]:
+              - checkbox "C. 促进社会公平正义" [ref=e148]
+              - generic [ref=e149]: C. 促进社会公平正义
+            - generic [ref=e150]:
+              - checkbox "D. 在现阶段，我国社会的主要矛盾是人民日益增长的美好生活需要和不平衡..." [ref=e151]
+              - generic [ref=e152]: D. 在现阶段，我国社会的主要矛盾是人民日益增长的美好生活需要和不平衡...
+            - generic [ref=e153]:
+              - checkbox "E. 全面深化改革" [ref=e154]
+              - generic [ref=e155]: E. 全面深化改革
+          - generic [ref=e563]:
+            - generic [ref=e564]: 回答有误
+            - generic [ref=e565]: 正确答案：D. 在现阶段，我国社会的主要矛盾是人民日益增长的美好生活需要和不平衡...
+            - generic [ref=e566]:
+              - strong [ref=e567]: 完整知识点：
+              - text: 在现阶段，我国社会的主要矛盾是人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。
+        - article [ref=e156]:
+          - generic [ref=e158]:
+            - generic [ref=e159]: 7. 请填写“党在社会主义初级阶段的基本路线”的核心关键词或核心短句。
+            - generic [ref=e160]:
+              - generic [ref=e161]: 填空题
+              - generic [ref=e162]: 文章一：应知应会（一）
+              - generic [ref=e163]: 07 党在社会主义初级阶段的基本路线
+          - textbox "输入关键词或核心短句" [ref=e164]
+          - generic [ref=e568]:
+            - generic [ref=e569]: 填写有误
+            - generic [ref=e570]: 参考关键词：领导和团结全国各族人民
+            - generic [ref=e571]:
+              - strong [ref=e572]: 完整知识点：
+              - text: 领导和团结全国各族人民，以经济建设为中心，坚持四项基本原则，坚持改革开放，自力更生，艰苦创业，为把我国建设成为富强民主文明和谐美丽的社会主义现代化强国而奋斗。
+        - article [ref=e165]:
+          - generic [ref=e167]:
+            - generic [ref=e168]: 8. 简述“"两个毫不动摇"”。
+            - generic [ref=e169]:
+              - generic [ref=e170]: 简答题
+              - generic [ref=e171]: 文章一：应知应会（一）
+              - generic [ref=e172]: 08 "两个毫不动摇"
+          - textbox "写下你能想到的要点" [ref=e173]
+          - generic [ref=e573]:
+            - generic [ref=e574]: 建议补充要点
+            - generic [ref=e575]: 命中关键词：0/4
+            - generic [ref=e576]: 已命中：暂无明显命中
+            - generic [ref=e577]:
+              - strong [ref=e578]: 完整知识点：
+              - text: "\"毫不动摇巩固和发展公有制经济\"和\"毫不动摇鼓励、支持、引导非公有制经济发展\"。"
+        - article [ref=e174]:
+          - generic [ref=e176]:
+            - generic [ref=e177]: 9. 下面哪一项对应这段表述：发展是我们党执政兴国的第一要务。
+            - generic [ref=e178]:
+              - generic [ref=e179]: 单选题
+              - generic [ref=e180]: 文章一：应知应会（一）
+              - generic [ref=e181]: 09 党执政兴国的第一要务
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - radio "A. 党执政兴国的第一要务" [ref=e184]
+              - generic [ref=e185]: A. 党执政兴国的第一要务
+            - generic [ref=e186]:
+              - radio "B. \"五位一体\"总体布局" [ref=e187]
+              - generic [ref=e188]: B. "五位一体"总体布局
+            - generic [ref=e189]:
+              - radio "C. 检验政绩观的重要标准" [ref=e190]
+              - generic [ref=e191]: C. 检验政绩观的重要标准
+            - generic [ref=e192]:
+              - radio "D. 组织生活会" [ref=e193]
+              - generic [ref=e194]: D. 组织生活会
+          - generic [ref=e579]:
+            - generic [ref=e580]: 回答有误
+            - generic [ref=e581]: 正确答案：A. 党执政兴国的第一要务
+            - generic [ref=e582]:
+              - strong [ref=e583]: 完整知识点：
+              - text: 发展是我们党执政兴国的第一要务。
+        - article [ref=e195]:
+          - generic [ref=e197]:
+            - generic [ref=e198]: 10. 关于“"五位一体"总体布局”，下列哪些属于该知识点内容？
+            - generic [ref=e199]:
+              - generic [ref=e200]: 多选题
+              - generic [ref=e201]: 文章一：应知应会（一）
+              - generic [ref=e202]: 10 "五位一体"总体布局
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - checkbox "A. 保证全党服从中央" [ref=e205]
+              - generic [ref=e206]: A. 保证全党服从中央
+            - generic [ref=e207]:
+              - checkbox "B. 文化建设" [ref=e208]
+              - generic [ref=e209]: B. 文化建设
+            - generic [ref=e210]:
+              - checkbox "C. 造福人民" [ref=e211]
+              - generic [ref=e212]: C. 造福人民
+            - generic [ref=e213]:
+              - checkbox "D. 统筹推进经济建设" [ref=e214]
+              - generic [ref=e215]: D. 统筹推进经济建设
+            - generic [ref=e216]:
+              - checkbox "E. 政治建设" [ref=e217]
+              - generic [ref=e218]: E. 政治建设
+          - generic [ref=e584]:
+            - generic [ref=e585]: 回答有误
+            - generic [ref=e586]: 正确答案：B. 文化建设；D. 统筹推进经济建设；E. 政治建设
+            - generic [ref=e587]:
+              - strong [ref=e588]: 完整知识点：
+              - text: 统筹推进经济建设、政治建设、文化建设、社会建设、生态文明建设。
+        - article [ref=e219]:
+          - generic [ref=e221]:
+            - generic [ref=e222]: 11. 请填写“"四个全面"战略布局”的核心关键词或核心短句。
+            - generic [ref=e223]:
+              - generic [ref=e224]: 填空题
+              - generic [ref=e225]: 文章一：应知应会（一）
+              - generic [ref=e226]: 11 "四个全面"战略布局
+          - textbox "输入关键词或核心短句" [ref=e227]
+          - generic [ref=e589]:
+            - generic [ref=e590]: 填写有误
+            - generic [ref=e591]: 参考关键词：协调推进全面建设社会主义现代化国家
+            - generic [ref=e592]:
+              - strong [ref=e593]: 完整知识点：
+              - text: 协调推进全面建设社会主义现代化国家、全面深化改革、全面依法治国、全面从严治党。
+        - article [ref=e228]:
+          - generic [ref=e230]:
+            - generic [ref=e231]: 12. 简述“四项基本原则”。
+            - generic [ref=e232]:
+              - generic [ref=e233]: 简答题
+              - generic [ref=e234]: 文章一：应知应会（一）
+              - generic [ref=e235]: 12 四项基本原则
+          - textbox "写下你能想到的要点" [ref=e236]
+          - generic [ref=e594]:
+            - generic [ref=e595]: 建议补充要点
+            - generic [ref=e596]: 命中关键词：0/5
+            - generic [ref=e597]: 已命中：暂无明显命中
+            - generic [ref=e598]:
+              - strong [ref=e599]: 完整知识点：
+              - text: 坚持社会主义道路、坚持人民民主专政、坚持中国共产党的领导、坚持马克思列宁主义毛泽东思想。
+        - article [ref=e237]:
+          - generic [ref=e239]:
+            - generic [ref=e240]: 13. 下面哪一项对应这段表述：互相尊重主权和领土完整、互不侵犯、互不干涉内政、平等互利、和平共处五项原则。
+            - generic [ref=e241]:
+              - generic [ref=e242]: 单选题
+              - generic [ref=e243]: 文章一：应知应会（一）
+              - generic [ref=e244]: 13 和平共处五项原则
+          - generic [ref=e245]:
+            - generic [ref=e246]:
+              - radio "A. \"两个维护\"" [ref=e247]
+              - generic [ref=e248]: A. "两个维护"
+            - generic [ref=e249]:
+              - radio "B. 和平共处五项原则" [ref=e250]
+              - generic [ref=e251]: B. 和平共处五项原则
+            - generic [ref=e252]:
+              - radio "C. \"两个一百年\"奋斗目标" [ref=e253]
+              - generic [ref=e254]: C. "两个一百年"奋斗目标
+            - generic [ref=e255]:
+              - radio "D. 《中国共产党党员网络行为规定》（部分）" [ref=e256]
+              - generic [ref=e257]: D. 《中国共产党党员网络行为规定》（部分）
+          - generic [ref=e600]:
+            - generic [ref=e601]: 回答有误
+            - generic [ref=e602]: 正确答案：B. 和平共处五项原则
+            - generic [ref=e603]:
+              - strong [ref=e604]: 完整知识点：
+              - text: 互相尊重主权和领土完整、互不侵犯、互不干涉内政、平等互利、和平共处五项原则。
+        - article [ref=e258]:
+          - generic [ref=e260]:
+            - generic [ref=e261]: 14. 关于“伟大建党精神”，下列哪些属于该知识点内容？
+            - generic [ref=e262]:
+              - generic [ref=e263]: 多选题
+              - generic [ref=e264]: 文章一：应知应会（一）
+              - generic [ref=e265]: 14 伟大建党精神
+          - generic [ref=e266]:
+            - generic [ref=e267]:
+              - checkbox "A. 坚持真理" [ref=e268]
+              - generic [ref=e269]: A. 坚持真理
+            - generic [ref=e270]:
+              - checkbox "B. 践行初心" [ref=e271]
+              - generic [ref=e272]: B. 践行初心
+            - generic [ref=e273]:
+              - checkbox "C. 在新的起点上继续推动文化繁荣" [ref=e274]
+              - generic [ref=e275]: C. 在新的起点上继续推动文化繁荣
+            - generic [ref=e276]:
+              - checkbox "D. 立党为公" [ref=e277]
+              - generic [ref=e278]: D. 立党为公
+            - generic [ref=e279]:
+              - checkbox "E. 坚守理想" [ref=e280]
+              - generic [ref=e281]: E. 坚守理想
+          - generic [ref=e605]:
+            - generic [ref=e606]: 回答有误
+            - generic [ref=e607]: 正确答案：A. 坚持真理；B. 践行初心；E. 坚守理想
+            - generic [ref=e608]:
+              - strong [ref=e609]: 完整知识点：
+              - text: 坚持真理、坚守理想， 践行初心、担当使命， 不怕牺牲、英勇斗争， 对党忠诚、不负人民。
+        - article [ref=e282]:
+          - generic [ref=e284]:
+            - generic [ref=e285]: 15. 请填写“党的建设的六项基本要求”的核心关键词或核心短句。
+            - generic [ref=e286]:
+              - generic [ref=e287]: 填空题
+              - generic [ref=e288]: 文章一：应知应会（一）
+              - generic [ref=e289]: 15 党的建设的六项基本要求
+          - textbox "输入关键词或核心短句" [ref=e290]
+          - generic [ref=e610]:
+            - generic [ref=e611]: 填写有误
+            - generic [ref=e612]: 参考关键词：第一
+            - generic [ref=e613]:
+              - strong [ref=e614]: 完整知识点：
+              - text: 第一，坚持党的基本路线。 第二，坚持解放思想，实事求是，与时俱进，求真务实。 第三，坚持新时代党的组织路线。 第四，坚持全心全意为人民服务。 第五，坚持民主集中制。 第六，坚持从严管党治党。
+        - article [ref=e291]:
+          - generic [ref=e293]:
+            - generic [ref=e294]: 16. 简述“党的最大政治优势”。
+            - generic [ref=e295]:
+              - generic [ref=e296]: 简答题
+              - generic [ref=e297]: 文章一：应知应会（一）
+              - generic [ref=e298]: 16 党的最大政治优势
+          - textbox "写下你能想到的要点" [ref=e299]
+          - generic [ref=e615]:
+            - generic [ref=e616]: 建议补充要点
+            - generic [ref=e617]: 命中关键词：0/2
+            - generic [ref=e618]: 已命中：暂无明显命中
+            - generic [ref=e619]:
+              - strong [ref=e620]: 完整知识点：
+              - text: 密切联系群众。
+        - article [ref=e300]:
+          - generic [ref=e302]:
+            - generic [ref=e303]: 17. 下面哪一项对应这段表述：脱离群众。
+            - generic [ref=e304]:
+              - generic [ref=e305]: 单选题
+              - generic [ref=e306]: 文章一：应知应会（一）
+              - generic [ref=e307]: 17 党执政后的最大危险
+          - generic [ref=e308]:
+            - generic [ref=e309]:
+              - radio "A. 当代中国发展进步的根本方向" [ref=e310]
+              - generic [ref=e311]: A. 当代中国发展进步的根本方向
+            - generic [ref=e312]:
+              - radio "B. 党执政后的最大危险" [ref=e313]
+              - generic [ref=e314]: B. 党执政后的最大危险
+            - generic [ref=e315]:
+              - radio "C. \"四风\"问题" [ref=e316]
+              - generic [ref=e317]: C. "四风"问题
+            - generic [ref=e318]:
+              - radio "D. 党的思想建设的首要任务" [ref=e319]
+              - generic [ref=e320]: D. 党的思想建设的首要任务
+          - generic [ref=e621]:
+            - generic [ref=e622]: 回答有误
+            - generic [ref=e623]: 正确答案：B. 党执政后的最大危险
+            - generic [ref=e624]:
+              - strong [ref=e625]: 完整知识点：
+              - text: 脱离群众。
+        - article [ref=e321]:
+          - generic [ref=e323]:
+            - generic [ref=e324]: 18. 关于“党的根本组织原则”，下列哪些属于该知识点内容？
+            - generic [ref=e325]:
+              - generic [ref=e326]: 多选题
+              - generic [ref=e327]: 文章一：应知应会（一）
+              - generic [ref=e328]: 18 党的根本组织原则
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - checkbox "A. 树立和践行正确政绩观" [ref=e331]
+              - generic [ref=e332]: A. 树立和践行正确政绩观
+            - generic [ref=e333]:
+              - checkbox "B. 民主集中制。" [ref=e334]
+              - generic [ref=e335]: B. 民主集中制。
+            - generic [ref=e336]:
+              - checkbox "C. 立党为公" [ref=e337]
+              - generic [ref=e338]: C. 立党为公
+            - generic [ref=e339]:
+              - checkbox "D. 构建人类命运共同体" [ref=e340]
+              - generic [ref=e341]: D. 构建人类命运共同体
+            - generic [ref=e342]:
+              - checkbox "E. 中国共产党是中国工人阶级的先锋队" [ref=e343]
+              - generic [ref=e344]: E. 中国共产党是中国工人阶级的先锋队
+          - generic [ref=e626]:
+            - generic [ref=e627]: 回答有误
+            - generic [ref=e628]: 正确答案：B. 民主集中制。
+            - generic [ref=e629]:
+              - strong [ref=e630]: 完整知识点：
+              - text: 民主集中制。
+        - article [ref=e345]:
+          - generic [ref=e347]:
+            - generic [ref=e348]: 19. 请填写“党的思想路线”的核心关键词或核心短句。
+            - generic [ref=e349]:
+              - generic [ref=e350]: 填空题
+              - generic [ref=e351]: 文章一：应知应会（一）
+              - generic [ref=e352]: 19 党的思想路线
+          - textbox "输入关键词或核心短句" [ref=e353]
+          - generic [ref=e631]:
+            - generic [ref=e632]: 填写有误
+            - generic [ref=e633]: 参考关键词：一切从实际出发
+            - generic [ref=e634]:
+              - strong [ref=e635]: 完整知识点：
+              - text: 一切从实际出发，理论联系实际，实事求是，在实践中检验真理和发展真理。
+        - article [ref=e354]:
+          - generic [ref=e356]:
+            - generic [ref=e357]: 20. 简述“党的群众路线”。
+            - generic [ref=e358]:
+              - generic [ref=e359]: 简答题
+              - generic [ref=e360]: 文章一：应知应会（一）
+              - generic [ref=e361]: 20 党的群众路线
+          - textbox "写下你能想到的要点" [ref=e362]
+          - generic [ref=e636]:
+            - generic [ref=e637]: 建议补充要点
+            - generic [ref=e638]: 命中关键词：0/6
+            - generic [ref=e639]: 已命中：暂无明显命中
+            - generic [ref=e640]:
+              - strong [ref=e641]: 完整知识点：
+              - text: 一切为了群众，一切依靠群众，从群众中来，到群众中去，把党的正确主张变为群众的自觉行动。
+        - article [ref=e363]:
+          - generic [ref=e365]:
+            - generic [ref=e366]: 21. 下面哪一项对应这段表述：政治意识、大局意识、核心意识、看齐意识。
+            - generic [ref=e367]:
+              - generic [ref=e368]: 单选题
+              - generic [ref=e369]: 文章一：应知应会（一）
+              - generic [ref=e370]: 21 "四个意识"
+          - generic [ref=e371]:
+            - generic [ref=e372]:
+              - radio "A. 党的思想路线" [ref=e373]
+              - generic [ref=e374]: A. 党的思想路线
+            - generic [ref=e375]:
+              - radio "B. \"四个意识\"" [ref=e376]
+              - generic [ref=e377]: B. "四个意识"
+            - generic [ref=e378]:
+              - radio "C. 组织设置" [ref=e379]
+              - generic [ref=e380]: C. 组织设置
+            - generic [ref=e381]:
+              - radio "D. \"两个毫不动摇\"" [ref=e382]
+              - generic [ref=e383]: D. "两个毫不动摇"
+          - generic [ref=e642]:
+            - generic [ref=e643]: 回答有误
+            - generic [ref=e644]: 正确答案：B. "四个意识"
+            - generic [ref=e645]:
+              - strong [ref=e646]: 完整知识点：
+              - text: 政治意识、大局意识、核心意识、看齐意识。
+        - article [ref=e384]:
+          - generic [ref=e386]:
+            - generic [ref=e387]: 22. 关于“"四个自信"”，下列哪些属于该知识点内容？
+            - generic [ref=e388]:
+              - generic [ref=e389]: 多选题
+              - generic [ref=e390]: 文章一：应知应会（一）
+              - generic [ref=e391]: 22 "四个自信"
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - checkbox "A. 根本要求" [ref=e394]
+              - generic [ref=e395]: A. 根本要求
+            - generic [ref=e396]:
+              - checkbox "B. 密切联系群众" [ref=e397]
+              - generic [ref=e398]: B. 密切联系群众
+            - generic [ref=e399]:
+              - checkbox "C. 理论自信" [ref=e400]
+              - generic [ref=e401]: C. 理论自信
+            - generic [ref=e402]:
+              - checkbox "D. 制度自信" [ref=e403]
+              - generic [ref=e404]: D. 制度自信
+            - generic [ref=e405]:
+              - checkbox "E. 道路自信" [ref=e406]
+              - generic [ref=e407]: E. 道路自信
+          - generic [ref=e647]:
+            - generic [ref=e648]: 回答有误
+            - generic [ref=e649]: 正确答案：C. 理论自信；D. 制度自信；E. 道路自信
+            - generic [ref=e650]:
+              - strong [ref=e651]: 完整知识点：
+              - text: 道路自信、理论自信、制度自信、文化自信。
+        - article [ref=e408]:
+          - generic [ref=e410]:
+            - generic [ref=e411]: 23. 请填写“"两个维护"”的核心关键词或核心短句。
+            - generic [ref=e412]:
+              - generic [ref=e413]: 填空题
+              - generic [ref=e414]: 文章一：应知应会（一）
+              - generic [ref=e415]: 23 "两个维护"
+          - textbox "输入关键词或核心短句" [ref=e416]
+          - generic [ref=e652]:
+            - generic [ref=e653]: 填写有误
+            - generic [ref=e654]: 参考关键词：坚决维护习近平总书记党中央的核心
+            - generic [ref=e655]:
+              - strong [ref=e656]: 完整知识点：
+              - text: 坚决维护习近平总书记党中央的核心、全党的核心地位，坚决维护以习近平同志为核心的党中央权威和集中统一领导。
+        - article [ref=e417]:
+          - generic [ref=e419]:
+            - generic [ref=e420]: 24. 简述“中国特色社会主义最本质的特征”。
+            - generic [ref=e421]:
+              - generic [ref=e422]: 简答题
+              - generic [ref=e423]: 文章一：应知应会（一）
+              - generic [ref=e424]: 24 中国特色社会主义最本质的特征
+          - textbox "写下你能想到的要点" [ref=e425]
+          - generic [ref=e657]:
+            - generic [ref=e658]: 建议补充要点
+            - generic [ref=e659]: 命中关键词：0/4
+            - generic [ref=e660]: 已命中：暂无明显命中
+            - generic [ref=e661]:
+              - strong [ref=e662]: 完整知识点：
+              - text: 中国共产党的领导是中国特色社会主义最本质的特征，是中国特色社会主义制度的最大优势，党是最高政治领导力量。
+        - article [ref=e426]:
+          - generic [ref=e428]:
+            - generic [ref=e429]: 25. 下面哪一项对应这段表述：年满十八岁的中国工人、农民、军人、知识分子和其他社会阶层的先进分子，承认党的纲领和章程，愿意参加党的一个组织并在其中积极工作、执行党的决议和按期交纳党费的，可以申请加入中国...
+            - generic [ref=e430]:
+              - generic [ref=e431]: 单选题
+              - generic [ref=e432]: 文章一：应知应会（一）
+              - generic [ref=e433]: 25 申请入党的基本条件
+          - generic [ref=e434]:
+            - generic [ref=e435]:
+              - radio "A. 申请入党的基本条件" [ref=e436]
+              - generic [ref=e437]: A. 申请入党的基本条件
+            - generic [ref=e438]:
+              - radio "B. 新时代新的文化使命" [ref=e439]
+              - generic [ref=e440]: B. 新时代新的文化使命
+            - generic [ref=e441]:
+              - radio "C. 党的群众路线" [ref=e442]
+              - generic [ref=e443]: C. 党的群众路线
+            - generic [ref=e444]:
+              - radio "D. 党的政治建设的首要任务" [ref=e445]
+              - generic [ref=e446]: D. 党的政治建设的首要任务
+          - generic [ref=e663]:
+            - generic [ref=e664]: 回答有误
+            - generic [ref=e665]: 正确答案：A. 申请入党的基本条件
+            - generic [ref=e666]:
+              - strong [ref=e667]: 完整知识点：
+              - text: 年满十八岁的中国工人、农民、军人、知识分子和其他社会阶层的先进分子，承认党的纲领和章程，愿意参加党的一个组织并在其中积极工作、执行党的决议和按期交纳党费的，可以申请加入中国共产党。
+        - article [ref=e447]:
+          - generic [ref=e449]:
+            - generic [ref=e450]: 26. 关于“党员的基本条件”，下列哪些属于该知识点内容？
+            - generic [ref=e451]:
+              - generic [ref=e452]: 多选题
+              - generic [ref=e453]: 文章一：应知应会（一）
+              - generic [ref=e454]: 26 党员的基本条件
+          - generic [ref=e455]:
+            - generic [ref=e456]:
+              - checkbox "A. 中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士" [ref=e457]
+              - generic [ref=e458]: A. 中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士
+            - generic [ref=e459]:
+              - checkbox "B. 我们党是按照马克思主义建党原则建立起来的" [ref=e460]
+              - generic [ref=e461]: B. 我们党是按照马克思主义建党原则建立起来的
+            - generic [ref=e462]:
+              - checkbox "C. 中国共产党党徽为镰刀和锤头组成的图案" [ref=e463]
+              - generic [ref=e464]: C. 中国共产党党徽为镰刀和锤头组成的图案
+            - generic [ref=e465]:
+              - checkbox "D. 不惜牺牲个人的一切" [ref=e466]
+              - generic [ref=e467]: D. 不惜牺牲个人的一切
+            - generic [ref=e468]:
+              - checkbox "E. 中国共产党党员必须全心全意为人民服务" [ref=e469]
+              - generic [ref=e470]: E. 中国共产党党员必须全心全意为人民服务
+          - generic [ref=e668]:
+            - generic [ref=e669]: 回答有误
+            - generic [ref=e670]: 正确答案：A. 中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士；D. 不惜牺牲个人的一切；E. 中国共产党党员必须全心全意为人民服务
+            - generic [ref=e671]:
+              - strong [ref=e672]: 完整知识点：
+              - text: 中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士。 中国共产党党员必须全心全意为人民服务，不惜牺牲个人的一切，为实现共产主义奋斗终身。 中国共产党党员永远是劳动人民的普通一员。除了法律和政策规定范围内的个人利益和工作职权以外，所有共产党员都不得谋求任何私利和特权。
+        - article [ref=e471]:
+          - generic [ref=e473]:
+            - generic [ref=e474]: 27. 请填写“发展党员的原则”的核心关键词或核心短句。
+            - generic [ref=e475]:
+              - generic [ref=e476]: 填空题
+              - generic [ref=e477]: 文章一：应知应会（一）
+              - generic [ref=e478]: 27 发展党员的原则
+          - textbox "输入关键词或核心短句" [ref=e479]
+          - generic [ref=e673]:
+            - generic [ref=e674]: 填写有误
+            - generic [ref=e675]: 参考关键词：发展党员
+            - generic [ref=e676]:
+              - strong [ref=e677]: 完整知识点：
+              - text: 发展党员，必须把政治标准放在首位，经过党的支部，坚持个别吸收的原则。
+        - article [ref=e480]:
+          - generic [ref=e482]:
+            - generic [ref=e483]: 28. 简述“入党誓词”。
+            - generic [ref=e484]:
+              - generic [ref=e485]: 简答题
+              - generic [ref=e486]: 文章一：应知应会（一）
+              - generic [ref=e487]: 28 入党誓词
+          - textbox "写下你能想到的要点" [ref=e488]
+          - generic [ref=e678]:
+            - generic [ref=e679]: 建议补充要点
+            - generic [ref=e680]: 命中关键词：0/9
+            - generic [ref=e681]: 已命中：暂无明显命中
+            - generic [ref=e682]:
+              - strong [ref=e683]: 完整知识点：
+              - text: 我志愿加入中国共产党，拥护党的纲领，遵守党的章程，履行党员义务，执行党的决定，严守党的纪律，保守党的秘密，对党忠诚，积极工作，为共产主义奋斗终身，随时准备为党和人民牺牲一切，永不叛党。
+        - article [ref=e489]:
+          - generic [ref=e491]:
+            - generic [ref=e492]: 29. 下面哪一项对应这段表述：预备党员的义务同正式党员一样。预备党员的权利，除了没有表决权、选举权和被选举权以外，也同正式党员一样。预备党员的预备期，从支部大会通过他为预备党员之日算起。
+            - generic [ref=e493]:
+              - generic [ref=e494]: 单选题
+              - generic [ref=e495]: 文章一：应知应会（一）
+              - generic [ref=e496]: 29 预备党员的教育和考察
+          - generic [ref=e497]:
+            - generic [ref=e498]:
+              - radio "A. 中国共产党的初心使命" [ref=e499]
+              - generic [ref=e500]: A. 中国共产党的初心使命
+            - generic [ref=e501]:
+              - radio "B. 党史学习教育应突出哪些内容" [ref=e502]
+              - generic [ref=e503]: B. 党史学习教育应突出哪些内容
+            - generic [ref=e504]:
+              - radio "C. \"四个服从\"" [ref=e505]
+              - generic [ref=e506]: C. "四个服从"
+            - generic [ref=e507]:
+              - radio "D. 预备党员的教育和考察" [ref=e508]
+              - generic [ref=e509]: D. 预备党员的教育和考察
+          - generic [ref=e684]:
+            - generic [ref=e685]: 回答有误
+            - generic [ref=e686]: 正确答案：D. 预备党员的教育和考察
+            - generic [ref=e687]:
+              - strong [ref=e688]: 完整知识点：
+              - text: 预备党员的义务同正式党员一样。预备党员的权利，除了没有表决权、选举权和被选举权以外，也同正式党员一样。预备党员的预备期，从支部大会通过他为预备党员之日算起。
+        - article [ref=e510]:
+          - generic [ref=e512]:
+            - generic [ref=e513]: 30. 关于“党龄”，下列哪些属于该知识点内容？
+            - generic [ref=e514]:
+              - generic [ref=e515]: 多选题
+              - generic [ref=e516]: 文章一：应知应会（一）
+              - generic [ref=e517]: 30 党龄
+          - generic [ref=e518]:
+            - generic [ref=e519]:
+              - checkbox "A. 政治纪律" [ref=e520]
+              - generic [ref=e521]: A. 政治纪律
+            - generic [ref=e522]:
+              - checkbox "B. 造福人民" [ref=e523]
+              - generic [ref=e524]: B. 造福人民
+            - generic [ref=e525]:
+              - checkbox "C. 指成为正式党员后的全部时间" [ref=e526]
+              - generic [ref=e527]: C. 指成为正式党员后的全部时间
+            - generic [ref=e528]:
+              - checkbox "D. 党员的党龄" [ref=e529]
+              - generic [ref=e530]: D. 党员的党龄
+            - generic [ref=e531]:
+              - checkbox "E. 从预备期满转为正式党员之日算起" [ref=e532]
+              - generic [ref=e533]: E. 从预备期满转为正式党员之日算起
+          - generic [ref=e689]:
+            - generic [ref=e690]: 回答有误
+            - generic [ref=e691]: 正确答案：C. 指成为正式党员后的全部时间；D. 党员的党龄；E. 从预备期满转为正式党员之日算起
+            - generic [ref=e692]:
+              - strong [ref=e693]: 完整知识点：
+              - text: 指成为正式党员后的全部时间。党员的党龄，从预备期满转为正式党员之日算起。
+      - paragraph [ref=e534]: 建议先用“顺序覆盖”把全部知识点过一遍，再切到“错题复习”集中补弱。
