@@ -652,13 +652,64 @@
       });
     }
 
-    function extractSegments(answer) {
-      return String(answer || "")
+    function cleanSegment(text) {
+      return String(text || "")
+        .replace(/\s+/g, " ")
+        .replace(/^[（(]?[0-9一二三四五六七八九十]+[）)、.．]\s*/g, "")
+        .replace(/^第[一二三四五六七八九十百千万0-9]+[条章节款项、，,.．\s]*/g, "")
+        .replace(/^[一二三四五六七八九十]+[是要为、，,.．\s]+/g, "")
+        .trim();
+    }
+
+    function isUsefulSegment(text, { minLength = 4 } = {}) {
+      const value = cleanSegment(text);
+      if (value.length < minLength || value.length > 52) return false;
+      if (/^第?[一二三四五六七八九十百千万0-9]+$/.test(value)) return false;
+      if (/^(第一|第二|第三|第四|第五|第六|第七|第八|第九|第十)$/.test(value)) return false;
+      if (/^(在现阶段|在新世纪新时代|有下列情形之一的|主要任务是|包括党员自学和组织学习两种方式)$/.test(value)) return false;
+      if (/提出[:：]/.test(value) || /^由/.test(value)) return false;
+      if (/[（(][^）)]*$/.test(value) || /出国$/.test(value)) return false;
+      if (/^(改革|发展|稳定|人民|群众|创新|教育|科技|人才)$/.test(value)) return false;
+      return /[\u4e00-\u9fa5A-Za-z0-9]/.test(value);
+    }
+
+    function uniqueSegments(list) {
+      const seen = new Set();
+      return list.filter(item => {
+        const key = normalize(item);
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+
+    function extractSegments(answer, options = {}) {
+      const minLength = options.minLength ?? 4;
+      const value = String(answer || "");
+      const numberedItems = value.match(/[（(]\d+[）)][^（(]+/g);
+      const rawParts = numberedItems && numberedItems.length >= 2
+        ? numberedItems
+        : value
         .replace(/\n/g, "；")
         .split(/[；;。.\n]/)
-        .flatMap(part => part.split(/[、，,]/))
-        .map(part => part.trim())
-        .filter(part => part.length >= 2 && part.length <= 36);
+        .flatMap(part => part.split(/[、，,]/));
+      const source = rawParts
+        .map(cleanSegment)
+        .filter(part => isUsefulSegment(part, { minLength }));
+      return uniqueSegments(source);
+    }
+
+    function hasListStructure(answer) {
+      const value = String(answer || "");
+      return /[、；;\n]/.test(value) || /[（(]\d+[）)]/.test(value) || /第[一二三四五六七八九十]+[，,、.．]/.test(value);
+    }
+
+    function isUsefulOptionTitle(title) {
+      const value = String(title || "").trim();
+      if (value.length < 3) return false;
+      if (/^(总则|组织设置|部分条款|党校|党课|党籍|党龄)$/.test(value)) return false;
+      if (/^(指导思想|总要求|核心要义|根本要求|目标任务|原则方法)$/.test(value)) return false;
+      return true;
     }
 
     function keywordList(point) {
@@ -668,7 +719,9 @@
     }
 
     function buildSingle(point) {
-      const candidates = shuffle(points.filter(item => item.id !== point.id)).slice(0, 3);
+      if (!isUsefulOptionTitle(point.title)) return null;
+      const candidates = shuffle(points.filter(item => item.id !== point.id && isUsefulOptionTitle(item.title))).slice(0, 3);
+      if (candidates.length < 3) return null;
       const options = shuffle([
         { text: point.title, correct: true },
         ...candidates.map(item => ({ text: item.title, correct: false }))
@@ -683,12 +736,13 @@
     }
 
     function buildMultiple(point) {
-      const correct = extractSegments(point.answer).slice(0, 3);
-      const fallback = [shortText(point.answer, 32)];
-      const correctOptions = correct.length >= 2 ? correct : fallback;
+      if (!hasListStructure(point.answer)) return null;
+      const correctOptions = extractSegments(point.answer, { minLength: 4 }).slice(0, 4);
+      if (correctOptions.length < 2) return null;
       const distractors = shuffle(points.filter(item => item.id !== point.id))
-        .flatMap(item => extractSegments(item.answer).slice(0, 1))
-        .filter(item => !correctOptions.includes(item))
+        .filter(item => hasListStructure(item.answer))
+        .flatMap(item => extractSegments(item.answer, { minLength: 4 }).slice(0, 2))
+        .filter(item => !correctOptions.some(answer => normalize(answer) === normalize(item)))
         .slice(0, Math.max(2, 5 - correctOptions.length));
       const packed = shuffle([
         ...correctOptions.map(text => ({ text, correct: true })),
@@ -704,7 +758,7 @@
     }
 
     function buildBlank(point) {
-      const target = extractSegments(point.answer)[0] || shortText(point.answer, 24);
+      const target = extractSegments(point.answer, { minLength: 2 })[0] || shortText(point.answer, 24);
       return {
         type: "blank",
         point,
@@ -724,7 +778,15 @@
 
     function buildQuestion(point, index) {
       const builders = [buildSingle, buildMultiple, buildBlank, buildShort];
-      return builders[index % builders.length](point);
+      const ordered = [
+        ...builders.slice(index % builders.length),
+        ...builders.slice(0, index % builders.length)
+      ];
+      for (const builder of ordered) {
+        const question = builder(point);
+        if (question) return question;
+      }
+      return buildBlank(point);
     }
 
     function pickPaper() {
