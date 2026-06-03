@@ -700,3 +700,443 @@ window.knowledgePoints = [
     "answer": "树立和践行正确政绩观，起决定性作用的是党性。只有党性坚强、摒弃私心杂念，才能保证政绩观不出偏差。"
   }
 ];
+
+window.questionBank = [
+  {
+    id: "q_single_01",
+    type: "single",
+    source: "文章一：应知应会（一）",
+    pointId: "kp025",
+    prompt: "申请入党的基本条件中，申请人年龄必须年满（）周岁。",
+    options: ["16", "17", "18", "20"],
+    answer: 2
+  },
+  {
+    id: "q_single_02",
+    type: "single",
+    source: "文章一：应知应会（一）",
+    pointId: "kp004",
+    prompt: "党的最高理想和最终目标是（）。",
+    options: ["实现共产主义", "共同富裕", "民族复兴", "现代化建设"],
+    answer: 0
+  },
+  {
+    id: "q_single_03",
+    type: "single",
+    source: "文章一：应知应会（一）",
+    pointId: "kp016",
+    prompt: "党的最大政治优势是（）。",
+    options: ["密切联系群众", "坚持理论创新", "全面依法治国", "坚持改革开放"],
+    answer: 0
+  },
+  {
+    id: "q_single_04",
+    type: "single",
+    source: "文章一：应知应会（一）",
+    pointId: "kp017",
+    prompt: "党执政后的最大危险是（）。",
+    options: ["能力不足", "脱离群众", "思想保守", "组织涣散"],
+    answer: 1
+  },
+  {
+    id: "q_single_05",
+    type: "single",
+    source: "文章一：应知应会（一）",
+    pointId: "kp018",
+    prompt: "党的根本组织原则是（）。",
+    options: ["首长负责制", "民主集中制", "集体领导制", "会议决定制"],
+    answer: 1
+  },
+  {
+    id: "q_single_06",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp089",
+    prompt: "党的生命线和根本工作路线是（）。",
+    options: ["群众路线", "思想路线", "政治路线", "组织路线"],
+    answer: 0
+  },
+  {
+    id: "q_single_07",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp086",
+    prompt: "总体国家安全观以（）为宗旨。",
+    options: ["人民安全", "政治安全", "经济安全", "社会安全"],
+    answer: 0
+  },
+  {
+    id: "q_single_08",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp086",
+    prompt: "总体国家安全观以（）为根本。",
+    options: ["人民安全", "政治安全", "经济安全", "文化安全"],
+    answer: 1
+  },
+  {
+    id: "q_single_09",
+    type: "single",
+    source: "中国共产党支部工作条例（试行）",
+    pointId: "kp044",
+    prompt: "党支部党员大会一般每（）召开1次。",
+    options: ["月", "季度", "半年", "一年"],
+    answer: 1
+  },
+  {
+    id: "q_single_10",
+    type: "single",
+    source: "中国共产党支部工作条例（试行）",
+    pointId: "kp048",
+    prompt: "党支部每年至少召开（）次组织生活会。",
+    options: ["1", "2", "3", "4"],
+    answer: 0
+  },
+  {
+    id: "q_single_11",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp074",
+    prompt: "党和国家工作总基调是（）。",
+    options: ["稳中求进", "守正创新", "改革开放", "共同富裕"],
+    answer: 0
+  },
+  {
+    id: "q_single_12",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp075",
+    prompt: "社会主义民主政治的本质和核心是（）。",
+    options: ["依法治国", "人民当家作主", "公平正义", "协商民主"],
+    answer: 1
+  },
+  {
+    id: "q_single_13",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp076",
+    prompt: "当代中国发展进步的根本方向是（）。",
+    options: ["社会主义现代化", "中国特色社会主义", "共同富裕", "改革创新"],
+    answer: 1
+  },
+  {
+    id: "q_single_14",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp077",
+    prompt: "新时代坚持和发展中国特色社会主义的根本动力是（）。",
+    options: ["高质量发展", "全面深化改革", "科技创新", "全面依法治国"],
+    answer: 1
+  },
+  {
+    id: "q_single_15",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp080",
+    prompt: "党在新时代的强军目标是（）。",
+    options: [
+      "建设一支听党指挥、能打胜仗、作风优良的人民军队，把人民军队建设成为世界一流军队",
+      "建设一支规模最大的现代化军队",
+      "建设一支完全职业化军队",
+      "建设一支以科技军工为主导的军队"
+    ],
+    answer: 0
+  },
+  {
+    id: "q_single_16",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp084",
+    prompt: "习近平外交思想的核心理念是（）。",
+    options: ["合作共赢", "构建人类命运共同体", "全球安全倡议", "和平共处"],
+    answer: 1
+  },
+  {
+    id: "q_single_17",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp085",
+    prompt: "新时代党的民族工作主线是（）。",
+    options: ["共同团结奋斗", "民族区域自治", "铸牢中华民族共同体意识", "促进共同繁荣"],
+    answer: 2
+  },
+  {
+    id: "q_single_18",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp081",
+    prompt: "党的思想建设的首要任务是（）。",
+    options: ["理论联系实际", "坚定理想信念", "严明政治纪律", "加强制度建设"],
+    answer: 1
+  },
+  {
+    id: "q_single_19",
+    type: "single",
+    source: "学习党的创新理论",
+    pointId: "kp082",
+    prompt: "党的政治建设的首要任务是（）。",
+    options: [
+      "保证全党服从中央，坚持党中央权威和集中统一领导",
+      "坚定理想信念",
+      "坚持为人民服务",
+      "全面深化改革"
+    ],
+    answer: 0
+  },
+  {
+    id: "q_single_20",
+    type: "single",
+    source: "树立和践行正确政绩观学习教育",
+    pointId: "kp098",
+    prompt: "检验政绩观的重要标准是（）。",
+    options: [
+      "把为老百姓办了多少好事实事作为检验政绩的重要标准",
+      "把经济增速作为唯一标准",
+      "把完成形式指标作为主要标准",
+      "把个人履历提升作为优先标准"
+    ],
+    answer: 0
+  },
+  {
+    id: "q_multiple_01",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp010",
+    prompt: "“五位一体”总体布局包括（）。",
+    options: ["经济建设", "政治建设", "文化建设", "社会建设", "生态文明建设", "党的建设"],
+    answer: [0, 1, 2, 3, 4]
+  },
+  {
+    id: "q_multiple_02",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp011",
+    prompt: "“四个全面”战略布局包括（）。",
+    options: ["全面建设社会主义现代化国家", "全面深化改革", "全面依法治国", "全面从严治党", "全面扩大内需"],
+    answer: [0, 1, 2, 3]
+  },
+  {
+    id: "q_multiple_03",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp021",
+    prompt: "“四个意识”包括（）。",
+    options: ["政治意识", "大局意识", "核心意识", "看齐意识", "道路自信"],
+    answer: [0, 1, 2, 3]
+  },
+  {
+    id: "q_multiple_04",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp022",
+    prompt: "“四个自信”包括（）。",
+    options: ["道路自信", "理论自信", "制度自信", "文化自信", "制度创新"],
+    answer: [0, 1, 2, 3]
+  },
+  {
+    id: "q_multiple_05",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp015",
+    prompt: "党的建设的六项基本要求包括（）。",
+    options: [
+      "坚持党的基本路线",
+      "坚持解放思想、实事求是、与时俱进、求真务实",
+      "坚持新时代党的组织路线",
+      "坚持全心全意为人民服务",
+      "坚持民主集中制",
+      "坚持从严管党治党",
+      "坚持照搬国外经验"
+    ],
+    answer: [0, 1, 2, 3, 4, 5]
+  },
+  {
+    id: "q_multiple_06",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp038",
+    prompt: "党的六大纪律包括（）。",
+    options: ["政治纪律", "组织纪律", "廉洁纪律", "群众纪律", "工作纪律", "生活纪律", "经济纪律"],
+    answer: [0, 1, 2, 3, 4, 5]
+  },
+  {
+    id: "q_multiple_07",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp039",
+    prompt: "对党员的纪律处分种类包括（）。",
+    options: ["警告", "严重警告", "撤销党内职务", "留党察看", "开除党籍", "警示谈话"],
+    answer: [0, 1, 2, 3, 4]
+  },
+  {
+    id: "q_multiple_08",
+    type: "multiple",
+    source: "党史学习教育工作条例",
+    pointId: "kp061",
+    prompt: "党史学习教育工作四个方面的主要任务包括（）。",
+    options: ["学史明理", "学史增信", "学史崇德", "学史力行", "学史求名"],
+    answer: [0, 1, 2, 3]
+  },
+  {
+    id: "q_multiple_09",
+    type: "multiple",
+    source: "学习党的创新理论",
+    pointId: "kp072",
+    prompt: "新发展理念包括（）。",
+    options: ["创新", "协调", "绿色", "开放", "共享", "竞争"],
+    answer: [0, 1, 2, 3, 4]
+  },
+  {
+    id: "q_multiple_10",
+    type: "multiple",
+    source: "文章一：应知应会（一）",
+    pointId: "kp035",
+    prompt: "“四个服从”包括（）。",
+    options: ["党员个人服从党的组织", "少数服从多数", "下级组织服从上级组织", "全党各个组织和全体党员服从党的全国代表大会和中央委员会", "基层服从机关"],
+    answer: [0, 1, 2, 3]
+  },
+  {
+    id: "q_blank_01",
+    type: "blank",
+    source: "文章一：应知应会（一）",
+    pointId: "kp002",
+    prompt: "全心全意为人民服务是党的____。",
+    answerText: "根本宗旨"
+  },
+  {
+    id: "q_blank_02",
+    type: "blank",
+    source: "文章一：应知应会（一）",
+    pointId: "kp018",
+    prompt: "党的根本组织原则是____。",
+    answerText: "民主集中制"
+  },
+  {
+    id: "q_blank_03",
+    type: "blank",
+    source: "文章一：应知应会（一）",
+    pointId: "kp016",
+    prompt: "党的最大政治优势是____。",
+    answerText: "密切联系群众"
+  },
+  {
+    id: "q_blank_04",
+    type: "blank",
+    source: "文章一：应知应会（一）",
+    pointId: "kp017",
+    prompt: "党执政后的最大危险是____。",
+    answerText: "脱离群众"
+  },
+  {
+    id: "q_blank_05",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp074",
+    prompt: "党和国家工作总基调是____。",
+    answerText: "稳中求进"
+  },
+  {
+    id: "q_blank_06",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp073",
+    prompt: "我国仍处于并将长期处于____。",
+    answerText: "社会主义初级阶段"
+  },
+  {
+    id: "q_blank_07",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp084",
+    prompt: "习近平外交思想的核心理念是____。",
+    answerText: "构建人类命运共同体"
+  },
+  {
+    id: "q_blank_08",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp085",
+    prompt: "新时代党的民族工作主线是____。",
+    answerText: "铸牢中华民族共同体意识"
+  },
+  {
+    id: "q_blank_09",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp089",
+    prompt: "党的生命线和根本工作路线是____。",
+    answerText: "群众路线"
+  },
+  {
+    id: "q_blank_10",
+    type: "blank",
+    source: "学习党的创新理论",
+    pointId: "kp075",
+    prompt: "社会主义民主政治的本质和核心是____。",
+    answerText: "人民当家作主"
+  },
+  {
+    id: "q_short_01",
+    type: "short",
+    source: "文章一：应知应会（一）",
+    pointId: "kp001",
+    prompt: "简述党的性质。",
+    answerText: "中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。"
+  },
+  {
+    id: "q_short_02",
+    type: "short",
+    source: "文章一：应知应会（一）",
+    pointId: "kp014",
+    prompt: "简述伟大建党精神。",
+    answerText: "坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民。"
+  },
+  {
+    id: "q_short_03",
+    type: "short",
+    source: "文章一：应知应会（一）",
+    pointId: "kp025",
+    prompt: "入党需要具备哪些基本条件？",
+    answerText: "年满十八岁的中国工人、农民、军人、知识分子和其他社会阶层的先进分子，承认党的纲领和章程，愿意参加党的一个组织并在其中积极工作、执行党的决议和按期交纳党费的，可以申请加入中国共产党。"
+  },
+  {
+    id: "q_short_04",
+    type: "short",
+    source: "文章一：应知应会（一）",
+    pointId: "kp026",
+    prompt: "简述党员的基本条件。",
+    answerText: "中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士。中国共产党党员必须全心全意为人民服务，不惜牺牲个人的一切，为实现共产主义奋斗终身。中国共产党党员永远是劳动人民的普通一员。除了法律和政策规定范围内的个人利益和工作职权以外，所有共产党员都不得谋求任何私利和特权。"
+  },
+  {
+    id: "q_short_05",
+    type: "short",
+    source: "文章一：应知应会（一）",
+    pointId: "kp035",
+    prompt: "简述“四个服从”。",
+    answerText: "党员个人服从党的组织，少数服从多数，下级组织服从上级组织，全党各个组织和全体党员服从党的全国代表大会和中央委员会。"
+  },
+  {
+    id: "q_short_06",
+    type: "short",
+    source: "中国共产党支部工作条例（试行）",
+    pointId: "kp043",
+    prompt: "简述党支部的职责。",
+    answerText: "党支部是党的基础组织，是党组织开展工作的基本单元，是党在社会基层组织中的战斗堡垒，是党的全部工作和战斗力的基础，担负直接教育党员、管理党员、监督党员和组织群众、宣传群众、凝聚群众、服务群众的职责。"
+  },
+  {
+    id: "q_short_07",
+    type: "short",
+    source: "学习党的创新理论",
+    pointId: "kp086",
+    prompt: "简述总体国家安全观的总体要求。",
+    answerText: "坚持总体国家安全观，必须坚持国家利益至上，以人民安全为宗旨，以政治安全为根本，以经济安全为基础，以军事科技文化社会安全为保障，以促进国际安全为依托，维护各领域国家安全，推进国家安全体系和能力现代化，走中国特色国家安全道路。"
+  },
+  {
+    id: "q_short_08",
+    type: "short",
+    source: "树立和践行正确政绩观学习教育",
+    pointId: "kp095",
+    prompt: "树立和践行正确政绩观的核心要义是什么？",
+    answerText: "围绕“政绩为谁而树、树什么样的政绩、靠什么树政绩”展开。"
+  }
+];

@@ -481,7 +481,7 @@
     <header class="topbar">
       <div>
         <h1>党建知识覆盖练习</h1>
-        <p class="subtitle">已替换为附件中的新知识点。顺序覆盖会按知识点逐批推进，随机组卷适合刷题，错题复习会只抽取提交时做错或要点不足的题。</p>
+        <p class="subtitle">题目已按“知识点.txt”整理为固定题库，包含选择题、填空题、简答题。简答题直接对照标准答案作答，点击“显示答案”可随时查看。</p>
       </div>
       <div class="pill" id="coveragePill">知识点 0 个</div>
     </header>
@@ -506,7 +506,7 @@
             <option value="20">20 题</option>
             <option value="30" selected>30 题</option>
             <option value="50">50 题</option>
-            <option value="100">全部知识点</option>
+            <option value="100">全部题目</option>
           </select>
         </div>
 
@@ -535,14 +535,14 @@
         </div>
 
         <div class="actions">
-          <button class="primary" id="submitBtn">提交并查看解析</button>
+          <button class="primary" id="submitBtn">提交并查看结果</button>
           <button class="secondary" id="nextBtn">生成下一套</button>
           <button class="ghost" id="resetBtn">清空本套作答</button>
           <button class="ghost" id="toggleKnowledgeBtn">显示知识库</button>
         </div>
 
         <div class="mini-note" id="tipsBox">
-          解析会展示该题对应知识点的完整内容。简答题按关键词覆盖度给出提示，不影响客观题得分。
+          所有题目都来自“知识点.txt”整理后的固定题库。简答题不再按关键词判定，直接展示标准答案供对照。
         </div>
       </aside>
 
@@ -553,7 +553,7 @@
           <div class="knowledge-list" id="knowledgeList"></div>
         </section>
         <div class="paper" id="paper"></div>
-        <p class="footer-note">建议先用“顺序覆盖”把全部知识点过一遍，再切到“错题复习”集中补弱。</p>
+        <p class="footer-note">建议先顺序做完整套题，再用错题复习集中回看易错内容。</p>
       </section>
     </div>
     <button class="back-top" id="backTopBtn" type="button" aria-label="回到顶部" title="回到顶部">↑</button>
@@ -562,13 +562,22 @@
   <script src="coverage-data.js"></script>
   <script>
     const points = Array.isArray(window.knowledgePoints) ? window.knowledgePoints : [];
-    const STORAGE_KEY = "partyKnowledgeWrongIdsV2";
+    const questionBank = Array.isArray(window.questionBank) ? window.questionBank : [];
+    const pointMap = new Map(points.map(point => [point.id, point]));
+    const STORAGE_KEY = "partyKnowledgeWrongIdsV3";
 
     const typeNames = {
       single: "单选题",
       multiple: "多选题",
       blank: "填空题",
       short: "简答题"
+    };
+    const typeOrder = ["single", "multiple", "blank", "short"];
+    const sectionNames = {
+      single: "一、单项选择题",
+      multiple: "二、多项选择题",
+      blank: "三、填空题",
+      short: "四、简答题"
     };
 
     const state = {
@@ -611,11 +620,6 @@
         .trim();
     }
 
-    function shortText(text, max = 92) {
-      const value = String(text || "").replace(/\s+/g, " ").trim();
-      return value.length > max ? value.slice(0, max) + "..." : value;
-    }
-
     function getWrongIds() {
       try {
         return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
@@ -642,155 +646,29 @@
       return arr;
     }
 
-    function getFilteredPoints() {
+    function getPoint(question) {
+      return pointMap.get(question.pointId) || {
+        id: question.pointId || question.id,
+        source: question.source || "未分类",
+        no: "--",
+        title: question.prompt,
+        answer: question.answerText || ""
+      };
+    }
+
+    function getFilteredQuestions() {
       const source = sourceFilterEl.value;
       const q = normalize(knowledgeSearchEl.value);
-      return points.filter(point => {
-        const inSource = source === "all" || point.source === source;
-        const inSearch = !q || normalize(`${point.source}${point.title}${point.answer}`).includes(q);
+      return questionBank.filter(question => {
+        const point = getPoint(question);
+        const inSource = source === "all" || question.source === source;
+        const inSearch = !q || normalize(`${question.source}${question.prompt}${question.answerText || ""}${point.title}${point.answer}`).includes(q);
         return inSource && inSearch;
       });
     }
 
-    function cleanSegment(text) {
-      return String(text || "")
-        .replace(/\s+/g, " ")
-        .replace(/^[（(]?[0-9一二三四五六七八九十]+[）)、.．]\s*/g, "")
-        .replace(/^第[一二三四五六七八九十百千万0-9]+[条章节款项、，,.．\s]*/g, "")
-        .replace(/^[一二三四五六七八九十]+[是要为、，,.．\s]+/g, "")
-        .trim();
-    }
-
-    function isUsefulSegment(text, { minLength = 4 } = {}) {
-      const value = cleanSegment(text);
-      if (value.length < minLength || value.length > 52) return false;
-      if (/^第?[一二三四五六七八九十百千万0-9]+$/.test(value)) return false;
-      if (/^(第一|第二|第三|第四|第五|第六|第七|第八|第九|第十)$/.test(value)) return false;
-      if (/^(在现阶段|在新世纪新时代|有下列情形之一的|主要任务是|包括党员自学和组织学习两种方式)$/.test(value)) return false;
-      if (/提出[:：]/.test(value) || /^由/.test(value)) return false;
-      if (/[（(][^）)]*$/.test(value) || /出国$/.test(value)) return false;
-      if (/^(改革|发展|稳定|人民|群众|创新|教育|科技|人才)$/.test(value)) return false;
-      return /[\u4e00-\u9fa5A-Za-z0-9]/.test(value);
-    }
-
-    function uniqueSegments(list) {
-      const seen = new Set();
-      return list.filter(item => {
-        const key = normalize(item);
-        if (!key || seen.has(key)) return false;
-        seen.add(key);
-        return true;
-      });
-    }
-
-    function extractSegments(answer, options = {}) {
-      const minLength = options.minLength ?? 4;
-      const value = String(answer || "");
-      const numberedItems = value.match(/[（(]\d+[）)][^（(]+/g);
-      const rawParts = numberedItems && numberedItems.length >= 2
-        ? numberedItems
-        : value
-        .replace(/\n/g, "；")
-        .split(/[；;。.\n]/)
-        .flatMap(part => part.split(/[、，,]/));
-      const source = rawParts
-        .map(cleanSegment)
-        .filter(part => isUsefulSegment(part, { minLength }));
-      return uniqueSegments(source);
-    }
-
-    function hasListStructure(answer) {
-      const value = String(answer || "");
-      return /[、；;\n]/.test(value) || /[（(]\d+[）)]/.test(value) || /第[一二三四五六七八九十]+[，,、.．]/.test(value);
-    }
-
-    function isUsefulOptionTitle(title) {
-      const value = String(title || "").trim();
-      if (value.length < 3) return false;
-      if (/^(总则|组织设置|部分条款|党校|党课|党籍|党龄)$/.test(value)) return false;
-      if (/^(指导思想|总要求|核心要义|根本要求|目标任务|原则方法)$/.test(value)) return false;
-      return true;
-    }
-
-    function keywordList(point) {
-      const titleWords = point.title.split(/[、“”‘’：:（）()]/).filter(Boolean);
-      const answerWords = extractSegments(point.answer).slice(0, 8);
-      return [...new Set([...titleWords, ...answerWords])].filter(item => item.length >= 2);
-    }
-
-    function buildSingle(point) {
-      if (!isUsefulOptionTitle(point.title)) return null;
-      const candidates = shuffle(points.filter(item => item.id !== point.id && isUsefulOptionTitle(item.title))).slice(0, 3);
-      if (candidates.length < 3) return null;
-      const options = shuffle([
-        { text: point.title, correct: true },
-        ...candidates.map(item => ({ text: item.title, correct: false }))
-      ]);
-      return {
-        type: "single",
-        point,
-        prompt: `下面哪一项对应这段表述：${shortText(point.answer, 86)}`,
-        options: options.map(item => item.text),
-        answer: options.findIndex(item => item.correct)
-      };
-    }
-
-    function buildMultiple(point) {
-      if (!hasListStructure(point.answer)) return null;
-      const correctOptions = extractSegments(point.answer, { minLength: 4 }).slice(0, 4);
-      if (correctOptions.length < 2) return null;
-      const distractors = shuffle(points.filter(item => item.id !== point.id))
-        .filter(item => hasListStructure(item.answer))
-        .flatMap(item => extractSegments(item.answer, { minLength: 4 }).slice(0, 2))
-        .filter(item => !correctOptions.some(answer => normalize(answer) === normalize(item)))
-        .slice(0, Math.max(2, 5 - correctOptions.length));
-      const packed = shuffle([
-        ...correctOptions.map(text => ({ text, correct: true })),
-        ...distractors.map(text => ({ text, correct: false }))
-      ]);
-      return {
-        type: "multiple",
-        point,
-        prompt: `关于“${point.title}”，下列哪些属于该知识点内容？`,
-        options: packed.map(item => item.text),
-        answer: packed.map((item, index) => item.correct ? index : -1).filter(index => index >= 0)
-      };
-    }
-
-    function buildBlank(point) {
-      const target = extractSegments(point.answer, { minLength: 2 })[0] || shortText(point.answer, 24);
-      return {
-        type: "blank",
-        point,
-        prompt: `请填写“${point.title}”的核心关键词或核心短句。`,
-        answerText: target
-      };
-    }
-
-    function buildShort(point) {
-      return {
-        type: "short",
-        point,
-        prompt: `简述“${point.title}”。`,
-        keywords: keywordList(point)
-      };
-    }
-
-    function buildQuestion(point, index) {
-      const builders = [buildSingle, buildMultiple, buildBlank, buildShort];
-      const ordered = [
-        ...builders.slice(index % builders.length),
-        ...builders.slice(0, index % builders.length)
-      ];
-      for (const builder of ordered) {
-        const question = builder(point);
-        if (question) return question;
-      }
-      return buildBlank(point);
-    }
-
     function pickPaper() {
-      const filtered = getFilteredPoints();
+      const filtered = getFilteredQuestions();
       const size = Math.min(Number(batchSizeEl.value), filtered.length || 0);
       if (!filtered.length) return [];
 
@@ -799,7 +677,7 @@
         chosen = shuffle(filtered).slice(0, size);
       } else if (state.mode === "wrong") {
         const wrongSet = new Set(getWrongIds());
-        chosen = shuffle(filtered.filter(point => wrongSet.has(point.id))).slice(0, size);
+        chosen = shuffle(filtered.filter(question => wrongSet.has(question.id))).slice(0, size);
       } else {
         if (state.cursor >= filtered.length) state.cursor = 0;
         chosen = filtered.slice(state.cursor, state.cursor + size);
@@ -807,25 +685,55 @@
         state.cursor = (state.cursor + size) % filtered.length;
       }
 
-      return chosen.map((point, index) => ({
-        ...buildQuestion(point, index),
-        uid: `${point.id}-${index}-${Date.now()}`
+      return chosen
+        .sort((a, b) => {
+          const typeDelta = typeOrder.indexOf(a.type) - typeOrder.indexOf(b.type);
+          if (typeDelta !== 0) return typeDelta;
+          return questionBank.findIndex(item => item.id === a.id) - questionBank.findIndex(item => item.id === b.id);
+        })
+        .map((question, index) => ({
+        ...question,
+        point: getPoint(question),
+        uid: `${question.id}-${index}-${Date.now()}`
       }));
+    }
+
+    function getAnswerHtml(question) {
+      if (question.type === "single") {
+        return `正确答案：${String.fromCharCode(65 + question.answer)}. ${escapeHtml(question.options[question.answer])}`;
+      }
+      if (question.type === "multiple") {
+        return `正确答案：${question.answer.map(index => `${String.fromCharCode(65 + index)}. ${escapeHtml(question.options[index])}`).join("；")}`;
+      }
+      return `标准答案：${escapeHtml(question.answerText || question.point.answer)}`;
     }
 
     function renderPaper() {
       paperEl.innerHTML = "";
       if (!state.currentPaper.length) {
-        paperEl.innerHTML = `<article class="question-card"><div class="question-title">当前条件下没有可生成的题目。</div><div class="meta"><span class="tag">请调整知识范围、搜索词，或先完成错题积累</span></div></article>`;
+        paperEl.innerHTML = `<article class="question-card"><div class="question-title">当前条件下没有可用题目。</div><div class="meta"><span class="tag">请调整知识范围、搜索词，或先完成错题积累</span></div></article>`;
         return;
       }
 
       const head = document.createElement("div");
       head.className = "section-head";
-      head.innerHTML = `<span>本套覆盖 ${state.currentPaper.length} 个知识点</span><span>${state.mode === "cover" ? "按顺序推进" : state.mode === "wrong" ? "来自错题本" : "随机抽取"}</span>`;
+      head.innerHTML = `<span>本套共 ${state.currentPaper.length} 题</span><span>${state.mode === "cover" ? "按顺序推进" : state.mode === "wrong" ? "来自错题本" : "随机抽取"}</span>`;
       paperEl.appendChild(head);
 
-      state.currentPaper.forEach((question, index) => {
+      let currentType = "";
+      let sectionQuestionNo = 0;
+      state.currentPaper.forEach(question => {
+        if (question.type !== currentType) {
+          currentType = question.type;
+          sectionQuestionNo = 0;
+          const sectionCount = state.currentPaper.filter(item => item.type === currentType).length;
+          const sectionHead = document.createElement("div");
+          sectionHead.className = "section-head";
+          sectionHead.innerHTML = `<span>${sectionNames[currentType]}</span><span>${sectionCount} 题</span>`;
+          paperEl.appendChild(sectionHead);
+        }
+        sectionQuestionNo += 1;
+
         const card = document.createElement("article");
         card.className = "question-card";
         card.dataset.uid = question.uid;
@@ -844,15 +752,15 @@
             `).join("")}
           </div>`;
         } else if (question.type === "blank") {
-          body = `<input class="blank-input" type="text" placeholder="输入关键词或核心短句">`;
+          body = `<input class="blank-input" type="text" placeholder="请输入答案">`;
         } else {
-          body = `<textarea class="short-answer" placeholder="写下你能想到的要点"></textarea>`;
+          body = `<textarea class="short-answer" placeholder="请输入完整答案"></textarea>`;
         }
 
         card.innerHTML = `
           <div class="question-head">
             <div>
-              <div class="question-title">${index + 1}. ${escapeHtml(question.prompt)}</div>
+              <div class="question-title">${sectionQuestionNo}. ${escapeHtml(question.prompt)}</div>
               <div class="meta">
                 <span class="tag type">${typeNames[question.type]}</span>
                 <span class="tag">${escapeHtml(question.point.source)}</span>
@@ -861,6 +769,9 @@
             </div>
           </div>
           ${body}
+          <div class="meta">
+            <button class="ghost show-answer-btn" type="button">显示答案</button>
+          </div>
           <div class="result"></div>
         `;
         paperEl.appendChild(card);
@@ -884,17 +795,28 @@ ${escapeHtml(question.point.answer)}</div>
       `;
     }
 
-    function markWrong(pointId, isWrong) {
+    function markWrong(questionId, isWrong) {
       const ids = new Set(getWrongIds());
-      if (isWrong) ids.add(pointId);
-      else ids.delete(pointId);
+      if (isWrong) ids.add(questionId);
+      else ids.delete(questionId);
       saveWrongIds([...ids]);
+    }
+
+    function revealAnswer(card, question) {
+      const result = card.querySelector(".result");
+      result.className = "result show";
+      result.innerHTML = `
+        <div class="result-title">标准答案</div>
+        <div>${getAnswerHtml(question)}</div>
+        <div class="knowledge-full"><strong>完整知识点：</strong>
+${escapeHtml(question.point.answer)}</div>
+      `;
     }
 
     function submitPaper() {
       let autoScore = 0;
       let autoTotal = 0;
-      let shortNeedReview = 0;
+      let shortTotal = 0;
 
       state.currentPaper.forEach(question => {
         const card = paperEl.querySelector(`[data-uid="${question.uid}"]`);
@@ -932,24 +854,23 @@ ${escapeHtml(question.point.answer)}</div>
           if (correct) autoScore += 1;
           showResult(card, question, `
             <div class="result-title">${correct ? "填写正确" : "填写有误"}</div>
-            <div>参考关键词：${escapeHtml(question.answerText)}</div>
+            <div>标准答案：${escapeHtml(question.answerText)}</div>
           `, correct);
         }
 
         if (question.type === "short") {
+          shortTotal += 1;
           const text = normalize(card.querySelector(".short-answer").value);
-          const matched = question.keywords.filter(keyword => text.includes(normalize(keyword)));
-          const passLine = Math.max(2, Math.ceil(Math.min(question.keywords.length, 6) / 2));
-          correct = matched.length >= passLine;
-          if (!correct) shortNeedReview += 1;
+          const answer = normalize(question.answerText || question.point.answer);
+          correct = !!text && (text.includes(answer) || answer.includes(text));
           showResult(card, question, `
-            <div class="result-title">${correct ? "要点覆盖较好" : "建议补充要点"}</div>
-            <div>命中关键词：${matched.length}/${question.keywords.length || 0}</div>
-            <div>已命中：${matched.length ? escapeHtml(matched.join("、")) : "暂无明显命中"}</div>
+            <div class="result-title">${correct ? "答案基本匹配" : "请对照标准答案查看"}</div>
+            <div>标准答案：${escapeHtml(question.answerText || question.point.answer)}</div>
           `, correct);
+          return;
         }
 
-        markWrong(question.point.id, !correct);
+        markWrong(question.id, !correct);
       });
 
       state.submitted = true;
@@ -958,7 +879,7 @@ ${escapeHtml(question.point.answer)}</div>
       summaryEl.className = "summary show";
       summaryEl.innerHTML = `
         <strong>客观题得分：${autoScore} / ${autoTotal}</strong>
-        <span>正确率约 ${percent}%。本套简答题中有 ${shortNeedReview} 题建议继续补充要点；做错或要点不足的知识点已进入错题本。</span>
+        <span>正确率约 ${percent}%。本套含 ${shortTotal} 道简答题，已展示标准答案供直接对照；客观题答错后会加入错题复习。</span>
       `;
       summaryEl.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -996,13 +917,19 @@ ${escapeHtml(question.point.answer)}</div>
     }
 
     function initSources() {
-      const sources = [...new Set(points.map(point => point.source))];
-      sourceFilterEl.innerHTML = `<option value="all">全部知识点</option>` +
+      const sources = [...new Set(questionBank.map(question => question.source))];
+      sourceFilterEl.innerHTML = `<option value="all">全部题库</option>` +
         sources.map(source => `<option value="${escapeHtml(source)}">${escapeHtml(source)}</option>`).join("");
     }
 
     function renderKnowledgeList() {
-      const filtered = getFilteredPoints();
+      const source = sourceFilterEl.value;
+      const q = normalize(knowledgeSearchEl.value);
+      const filtered = points.filter(point => {
+        const inSource = source === "all" || point.source === source;
+        const inSearch = !q || normalize(`${point.source}${point.title}${point.answer}`).includes(q);
+        return inSource && inSearch;
+      });
       knowledgeListEl.innerHTML = filtered.map(point => `
         <article class="knowledge-item">
           <h3>${escapeHtml(point.no)} ${escapeHtml(point.title)}</h3>
@@ -1041,6 +968,16 @@ ${escapeHtml(question.point.answer)}</div>
       generatePaper({ keepNumber: true });
     });
 
+    paperEl.addEventListener("click", event => {
+      const button = event.target.closest(".show-answer-btn");
+      if (!button) return;
+      const card = button.closest(".question-card");
+      if (!card) return;
+      const question = state.currentPaper.find(item => item.uid === card.dataset.uid);
+      if (!question) return;
+      revealAnswer(card, question);
+    });
+
     document.getElementById("submitBtn").addEventListener("click", submitPaper);
     document.getElementById("nextBtn").addEventListener("click", nextPaper);
     document.getElementById("resetBtn").addEventListener("click", resetAnswers);
@@ -1056,7 +993,7 @@ ${escapeHtml(question.point.answer)}</div>
       backTopBtn.classList.toggle("show", window.scrollY > 420);
     }, { passive: true });
 
-    coveragePillEl.textContent = `知识点 ${points.length} 个`;
+    coveragePillEl.textContent = `知识点 ${points.length} 个 / 题目 ${questionBank.length} 题`;
     state.paperNo = 1;
     initSources();
     updateWrongCount();
