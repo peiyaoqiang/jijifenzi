@@ -490,8 +490,8 @@
       <aside class="panel">
         <h2>练习设置</h2>
         <div class="mode-tabs" role="tablist" aria-label="练习模式">
-          <button class="active" data-mode="cover">顺序覆盖</button>
-          <button data-mode="random">随机组卷</button>
+          <button data-mode="cover">顺序覆盖</button>
+          <button class="active" data-mode="random">随机组卷</button>
           <button data-mode="wrong">错题复习</button>
         </div>
 
@@ -503,8 +503,8 @@
         <div class="field">
           <label for="batchSize">每套题量</label>
           <select id="batchSize">
-            <option value="20">20 题</option>
-            <option value="30" selected>30 题</option>
+            <option value="20" selected>20 题</option>
+            <option value="30">30 题</option>
             <option value="50">50 题</option>
             <option value="100">全部题目</option>
           </select>
@@ -542,7 +542,7 @@
         </div>
 
         <div class="mini-note" id="tipsBox">
-          所有题目都来自“知识点.txt”整理后的固定题库。简答题不再按关键词判定，直接展示标准答案供对照。
+          所有题目都来自“知识点.txt”整理后的固定题库。默认随机抽题，并尽量均衡题型分布；简答题直接展示标准答案供对照。
         </div>
       </aside>
 
@@ -553,7 +553,7 @@
           <div class="knowledge-list" id="knowledgeList"></div>
         </section>
         <div class="paper" id="paper"></div>
-        <p class="footer-note">建议先顺序做完整套题，再用错题复习集中回看易错内容。</p>
+        <p class="footer-note">默认随机刷题更适合日常练习，顺序覆盖适合系统过一遍全部题库。</p>
       </section>
     </div>
     <button class="back-top" id="backTopBtn" type="button" aria-label="回到顶部" title="回到顶部">↑</button>
@@ -581,7 +581,7 @@
     };
 
     const state = {
-      mode: "cover",
+      mode: "random",
       paperNo: 1,
       cursor: 0,
       submitted: false,
@@ -667,6 +667,49 @@
       });
     }
 
+    function pickBalancedRandom(filtered, size) {
+      const groups = {
+        single: shuffle(filtered.filter(question => question.type === "single")),
+        multiple: shuffle(filtered.filter(question => question.type === "multiple")),
+        blank: shuffle(filtered.filter(question => question.type === "blank")),
+        short: shuffle(filtered.filter(question => question.type === "short"))
+      };
+
+      const weights = {
+        single: 0.35,
+        multiple: 0.2,
+        blank: 0.2,
+        short: 0.25
+      };
+
+      const quotas = {};
+      let assigned = 0;
+      typeOrder.forEach(type => {
+        const target = Math.floor(size * weights[type]);
+        quotas[type] = Math.min(target, groups[type].length);
+        assigned += quotas[type];
+      });
+
+      while (assigned < size) {
+        let filled = false;
+        for (const type of typeOrder) {
+          if (assigned >= size) break;
+          if (quotas[type] < groups[type].length) {
+            quotas[type] += 1;
+            assigned += 1;
+            filled = true;
+          }
+        }
+        if (!filled) break;
+      }
+
+      const chosen = [];
+      typeOrder.forEach(type => {
+        chosen.push(...groups[type].slice(0, quotas[type]));
+      });
+      return shuffle(chosen).slice(0, size);
+    }
+
     function pickPaper() {
       const filtered = getFilteredQuestions();
       const size = Math.min(Number(batchSizeEl.value), filtered.length || 0);
@@ -674,10 +717,10 @@
 
       let chosen = [];
       if (state.mode === "random") {
-        chosen = shuffle(filtered).slice(0, size);
+        chosen = pickBalancedRandom(filtered, size);
       } else if (state.mode === "wrong") {
         const wrongSet = new Set(getWrongIds());
-        chosen = shuffle(filtered.filter(question => wrongSet.has(question.id))).slice(0, size);
+        chosen = pickBalancedRandom(filtered.filter(question => wrongSet.has(question.id)), size);
       } else {
         if (state.cursor >= filtered.length) state.cursor = 0;
         chosen = filtered.slice(state.cursor, state.cursor + size);

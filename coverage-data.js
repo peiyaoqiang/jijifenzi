@@ -1140,3 +1140,53 @@ window.questionBank = [
     answerText: "围绕“政绩为谁而树、树什么样的政绩、靠什么树政绩”展开。"
   }
 ];
+
+(function buildSupplementalQuestionBank() {
+  const points = Array.isArray(window.knowledgePoints) ? window.knowledgePoints : [];
+  const bank = Array.isArray(window.questionBank) ? window.questionBank : [];
+  const existing = new Set(bank.map(question => `${question.pointId}::${question.type}`));
+
+  function plainText(value) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .replace(/[。；;]+$/g, "")
+      .trim();
+  }
+
+  function answerLength(value) {
+    return plainText(value).replace(/\s+/g, "").length;
+  }
+
+  const supplemental = [];
+
+  points.forEach(point => {
+    const answerText = plainText(point.answer);
+    if (!answerText) return;
+
+    const useBlank = answerLength(answerText) <= 18;
+    const type = useBlank ? "blank" : "short";
+    if (existing.has(`${point.id}::${type}`)) return;
+
+    supplemental.push(
+      useBlank
+        ? {
+            id: `q_auto_blank_${point.id}`,
+            type: "blank",
+            source: point.source,
+            pointId: point.id,
+            prompt: `请填写“${point.title}”。`,
+            answerText
+          }
+        : {
+            id: `q_auto_short_${point.id}`,
+            type: "short",
+            source: point.source,
+            pointId: point.id,
+            prompt: `简述“${point.title}”。`,
+            answerText
+          }
+    );
+  });
+
+  window.questionBank = bank.concat(supplemental);
+})();
