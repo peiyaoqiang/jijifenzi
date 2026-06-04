@@ -1157,35 +1157,101 @@ window.questionBank = [
     return plainText(value).replace(/\s+/g, "").length;
   }
 
+  function shortText(value, maxLength = 92) {
+    const text = plainText(value);
+    return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
+  }
+
+  function uniqueTexts(values) {
+    const seen = new Set();
+    return values.filter(value => {
+      const key = plainText(value);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function getChoiceMode(point) {
+    return answerLength(point.answer) <= 80 ? "answer" : "title";
+  }
+
+  function getChoiceText(point, mode) {
+    return mode === "answer" ? shortText(point.answer) : shortText(point.title, 48);
+  }
+
+  function buildSingleQuestion(point) {
+    const mode = getChoiceMode(point);
+    const sameSource = points.filter(item => item.id !== point.id && item.source === point.source);
+    const otherSource = points.filter(item => item.id !== point.id && item.source !== point.source);
+    const distractors = uniqueTexts(
+      sameSource.concat(otherSource).map(item => getChoiceText(item, mode))
+    ).slice(0, 3);
+
+    if (distractors.length < 3) return null;
+
+    const correct = getChoiceText(point, mode);
+    const options = [...distractors];
+    const answer = Number(String(point.id).replace(/\D/g, "") || 0) % 4;
+    options.splice(answer, 0, correct);
+
+    return {
+      id: `q_auto_single_${point.id}`,
+      type: "single",
+      source: point.source,
+      pointId: point.id,
+      prompt: mode === "answer"
+        ? `“${point.title}”的正确表述是（）。`
+        : `以下哪项知识点对应这段表述：“${shortText(point.answer, 110)}”？`,
+      options,
+      answer
+    };
+  }
+
+  function buildBlankQuestion(point, answerText) {
+    const shortAnswer = answerLength(answerText) <= 90;
+    return {
+      id: `q_auto_blank_${point.id}`,
+      type: "blank",
+      source: point.source,
+      pointId: point.id,
+      prompt: shortAnswer
+        ? `“${shortText(answerText, 110)}”对应的知识点是____。`
+        : `请填写“${point.title}”的核心表述。`,
+      answerText: shortAnswer ? plainText(point.title) : answerText
+    };
+  }
+
   const supplemental = [];
 
   points.forEach(point => {
     const answerText = plainText(point.answer);
     if (!answerText) return;
 
-    const useBlank = answerLength(answerText) <= 18;
-    const type = useBlank ? "blank" : "short";
-    if (existing.has(`${point.id}::${type}`)) return;
+    if (!existing.has(`${point.id}::single`)) {
+      const single = buildSingleQuestion(point);
+      if (single) {
+        supplemental.push(single);
+        existing.add(`${point.id}::single`);
+      }
+    }
 
-    supplemental.push(
-      useBlank
-        ? {
-            id: `q_auto_blank_${point.id}`,
-            type: "blank",
-            source: point.source,
-            pointId: point.id,
-            prompt: `请填写“${point.title}”。`,
-            answerText
-          }
-        : {
-            id: `q_auto_short_${point.id}`,
-            type: "short",
-            source: point.source,
-            pointId: point.id,
-            prompt: `简述“${point.title}”。`,
-            answerText
-          }
-    );
+    if (!existing.has(`${point.id}::blank`)) {
+      supplemental.push(buildBlankQuestion(point, answerText));
+      existing.add(`${point.id}::blank`);
+    }
+
+    if (!existing.has(`${point.id}::short`) && answerLength(answerText) > 40) {
+      supplemental.push({
+        id: `q_auto_short_${point.id}`,
+        type: "short",
+        source: point.source,
+        pointId: point.id,
+        prompt: `简述“${point.title}”。`,
+        answerText
+      });
+      existing.add(`${point.id}::short`);
+    }
   });
 
   window.questionBank = bank.concat(supplemental);

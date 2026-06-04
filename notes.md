@@ -1,21 +1,26 @@
-﻿# Notes: 做题平台改造
+# Notes: 减少选择题和填空题重复
 
 ## 当前任务
-- 题目内容来源：`知识点.txt`
-- 需要题型：选择题、填空题、简答题
-- 约束：题目和答案不要做太强变形；简答题直接按标准答案作答；点击“显示答案”后可直接查看答案
+- 用户反馈：选择题、填空题重复太多，需要多做选择题、填空题。
+- 本次目标：增加选择题、填空题数量，并降低随机组卷的近期重复。
 
-## 初始判断
-- 很可能是前端静态页面 + 静态 JS 题库
-- 更稳妥的方式是把 `知识点.txt` 整理成结构化题库，而不是在浏览器里临时解析文本
+## 已确认状态
+- 项目文件：`index.html`、`coverage-data.js`、`知识点.txt`。
+- 运行时题库统计：知识点 100 个，题目 131 道。
+- 题型分布：单选 20、多选 10、填空 23、简答 78。
+- 重复原因：单选和填空供给偏少；随机抽题只洗牌，不记录近期题。
+
+## 修改方向
+- `coverage-data.js`：为缺少单选/填空的知识点生成补充题。
+- `index.html`：随机模式记录最近出现题目，优先从未近期出现的题里抽。
 
 ## 已完成
-- 在 `coverage-data.js` 追加固定题库 `window.questionBank`，共 48 题。
-- 保留 `window.knowledgePoints` 作为知识库展示数据来源。
-- `index.html` 改为基于固定题库筛选、组卷、提交、错题复习。
-- 每题新增“显示答案”按钮，可直接查看标准答案与完整知识点。
-- 简答题取消关键词命中判定，改为直接展示标准答案，提交时只做参考对照。
+- `coverage-data.js`：自动补充单选题和填空题；保留原固定题和简答题。
+- `index.html`：随机组卷题型权重调整为单选 42%、多选 18%、填空 30%、简答 10%。
+- `index.html`：新增最近随机题记录 `partyKnowledgeRecentRandomIdsV1`，随机模式优先抽未近期出现的题。
 
 ## 验证
-- `node -e "global.window={}; require('./coverage-data.js'); console.log(window.knowledgePoints.length, window.questionBank.length);"` 输出 `100 48`
-- `node -e "const fs=require('fs'); const html=fs.readFileSync('index.html','utf8'); const m=html.match(/<script>\s*([\s\S]*)<\/script>\s*<\/body>/); new Function(m[1]);"` 通过，说明 `index.html` 内联脚本语法正常
+- `node -e "global.window={}; require('./coverage-data.js'); ..."` 输出：知识点 100 个，题目 265 道。
+- 题型分布：单选 101、多选 10、填空 100、简答 54。
+- 单选结构检查：`badSingles: 0`。
+- `index.html` 内联脚本语法检查通过：`index inline script syntax ok`。

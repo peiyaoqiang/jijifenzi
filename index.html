@@ -565,6 +565,7 @@
     const questionBank = Array.isArray(window.questionBank) ? window.questionBank : [];
     const pointMap = new Map(points.map(point => [point.id, point]));
     const STORAGE_KEY = "partyKnowledgeWrongIdsV3";
+    const RECENT_RANDOM_KEY = "partyKnowledgeRecentRandomIdsV1";
 
     const typeNames = {
       single: "单选题",
@@ -633,6 +634,23 @@
       updateWrongCount();
     }
 
+    function getRecentRandomIds() {
+      try {
+        return JSON.parse(localStorage.getItem(RECENT_RANDOM_KEY) || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function saveRecentRandomIds(ids) {
+      localStorage.setItem(RECENT_RANDOM_KEY, JSON.stringify([...new Set(ids)]));
+    }
+
+    function rememberRecentRandomIds(ids, maxCount) {
+      const merged = ids.concat(getRecentRandomIds().filter(id => !ids.includes(id)));
+      saveRecentRandomIds(merged.slice(0, maxCount));
+    }
+
     function updateWrongCount() {
       wrongCountEl.textContent = getWrongIds().length;
     }
@@ -668,18 +686,24 @@
     }
 
     function pickBalancedRandom(filtered, size) {
+      const recentSet = new Set(getRecentRandomIds());
+      const preferFresh = list => {
+        const shuffled = shuffle(list);
+        return shuffled.filter(question => !recentSet.has(question.id))
+          .concat(shuffled.filter(question => recentSet.has(question.id)));
+      };
       const groups = {
-        single: shuffle(filtered.filter(question => question.type === "single")),
-        multiple: shuffle(filtered.filter(question => question.type === "multiple")),
-        blank: shuffle(filtered.filter(question => question.type === "blank")),
-        short: shuffle(filtered.filter(question => question.type === "short"))
+        single: preferFresh(filtered.filter(question => question.type === "single")),
+        multiple: preferFresh(filtered.filter(question => question.type === "multiple")),
+        blank: preferFresh(filtered.filter(question => question.type === "blank")),
+        short: preferFresh(filtered.filter(question => question.type === "short"))
       };
 
       const weights = {
-        single: 0.35,
-        multiple: 0.2,
-        blank: 0.2,
-        short: 0.25
+        single: 0.42,
+        multiple: 0.18,
+        blank: 0.3,
+        short: 0.1
       };
 
       const quotas = {};
@@ -726,6 +750,10 @@
         chosen = filtered.slice(state.cursor, state.cursor + size);
         if (chosen.length < size) chosen = chosen.concat(filtered.slice(0, size - chosen.length));
         state.cursor = (state.cursor + size) % filtered.length;
+      }
+
+      if (state.mode === "random") {
+        rememberRecentRandomIds(chosen.map(question => question.id), Math.max(size * 4, 80));
       }
 
       return chosen
